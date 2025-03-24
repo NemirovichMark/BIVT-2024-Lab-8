@@ -1,7 +1,6 @@
 namespace Lab_8
 {
-    public class Purple_1 : Purple
-    {
+    public class Purple_1 : Purple{
         private string _output;
 
 
@@ -10,6 +9,8 @@ namespace Lab_8
         public Purple_1(string input): base(input){}
 
         public override void Review(){
+            if (Input == null) return;
+
             string[] words = Input.Split(punctuation_marks);
             int last = 0;
             

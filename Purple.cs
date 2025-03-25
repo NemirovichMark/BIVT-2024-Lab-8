@@ -4,7 +4,7 @@
 
         public string Input => _input;
 
-        protected readonly char[] punctuation_marks = {'.', '!', '?', ',', ':', '\"', ';', '–', '(', ')', '[', ']', '{', '}', '/'};
+        protected readonly char[] punctuation_marks = {'.', '!', '?', ',', ':', '\"', ';', '–', '(', ')', '[', ']', '{', '}', '/', ' '};
 
         public Purple(string input){
             _input = input;

@@ -10,7 +10,7 @@ namespace Lab_8
     {
         static void Main(string[] args)
         {
-            Test_3();
+            //Test_4();
         }
 
         static void Test_1()
@@ -154,26 +154,54 @@ namespace Lab_8
 
         static void Test_4()
         {
-            Purple_3 p1 = new Purple_3("Ученики зашифровывают свои записки, записывая все слова наоборот. Знаки препинания оставить на своих местах. Составить программу, зашифровывающую и расшифровывающую сообщение. Свойство Output должно возвращать ");
+            string answer1 = "После многолетних исследований ученые обнаружили тревожную тенденцию в вырубке лесов Амазонии. Анализ данных показал, что основной участник разрушения лесного покрова – человеческая деятельность. За последние десятилетия рост объема вырубки достиг критических показателей. Главными факторами, способствующими этому, являются промышленные рубки, производство древесины, расширение сельскохозяйственных угодий и незаконная добыча древесины. Это приводит к серьезным экологическим последствиям, таким как потеря биоразнообразия, ухудшение климата и угроза вымирания многих видов животных и растений.";
+            Purple_3 p1 = new Purple_3(answer1);
             p1.Review();
-            string incoded1 = p1.Output;
-            
-            Console.WriteLine(incoded1);
-            (string, char)[] codes1 = p1.Codes;
-
-            Purple_4 p1_1 = new Purple_4(incoded1, codes1);
+            Purple_4 p1_1 = new Purple_4(p1.Output, p1.Codes);
             p1_1.Review();
-            Console.WriteLine(p1_1.Output);
+            Console.WriteLine(p1_1.Output == answer1);
 
-            Purple_3 p2 = new Purple_3("абсабсабс");
+            string answer2 = "Двигатель самолета – это сложная инженерная конструкция, обеспечивающая подъем, управление и движение в воздухе. Он состоит из множества компонентов, каждый из которых играет важную роль в общей работе механизма. Внутреннее устройство двигателя включает в себя компрессор, камеру сгорания, турбину и системы управления и охлаждения. Принцип работы основан на воздушно-топливной смеси, которая подвергается сжатию, воспламенению и расширению, обеспечивая движение воздушного судна.";
+            Purple_3 p2 = new Purple_3(answer2);
             p2.Review();
-            string incoded2 = p2.Output;
-            Console.WriteLine(incoded2);
-            (string, char)[] codes2 = p2.Codes;
-
-            Purple_4 p2_1 = new Purple_4(incoded2, codes2);
+            Purple_4 p2_1 = new Purple_4(p2.Output, p2.Codes);
             p2_1.Review();
-            Console.WriteLine(p2_1.Output);
+            Console.WriteLine(p2_1.Output == answer2);
+
+            string answer3 = "1 июля 2015 года Греция объявила о дефолте по государственному долгу, став первой развитой страной в истории, которая не смогла выплатить свои долговые обязательства в полном объеме. Сумма дефолта составила порядка 1,6 миллиарда евро. Этому предшествовали долгие переговоры с международными кредиторами, такими как Международный валютный фонд (МВФ), Европейский центральный банк (ЕЦБ) и Европейская комиссия (ЕК), о программах финансовой помощи и реструктуризации долга. Основными причинами дефолта стали недостаточная эффективность реформ, направленных на улучшение финансовой стабильности страны, а также политическая нестабильность, что вызвало потерю доверия со стороны международных инвесторов и кредиторов. Последствия дефолта оказались глубокими и долгосрочными: сокращение кредитного рейтинга страны, увеличение затрат на заемный капитал, рост стоимости заимствований и утрата доверия со стороны международных инвесторов.";
+            Purple_3 p3 = new Purple_3(answer3);
+            p3.Review();
+            Purple_4 p3_1 = new Purple_4(p3.Output, p3.Codes);
+            p3_1.Review();
+            Console.WriteLine(p3_1.Output == answer3);
+
+            string answer4 = "Фьорды – это ущелья, формирующиеся ледниками и заполняющиеся морской водой. Название происходит от древнескандинавского слова \"fjǫrðr\". Эти глубокие заливы, окруженные высокими горами, представляют захватывающие виды и природную красоту. Они популярны среди туристов и известны под разными названиями: в Норвегии – \"фьорды\", в Шотландии – \"фьордс\", в Исландии – \"фьордар\". Фьорды играют важную роль в культуре и туризме региона, продолжая вдохновлять людей со всего мира.";
+            Purple_3 p4 = new Purple_3(answer4);
+            p4.Review();
+            Purple_4 p4_1 = new Purple_4(p4.Output, p4.Codes);
+            p4_1.Review();
+            Console.WriteLine(p4_1.Output == answer4);
+
+            //Console.WriteLine(p4_1.Output);
+            //Console.WriteLine(answer4);
+
+            string answer5 = "William Shakespeare, widely regarded as one of the greatest writers in the English language, authored a total of 37 plays, along with numerous poems and sonnets. He was born in Stratford-upon-Avon, England, in 1564, and died in 1616. Shakespeare's most famous works, including \"Romeo and Juliet,\" \"Hamlet,\" \"Macbeth,\" and \"Othello,\" were written during the late 16th and early 17th centuries. \"Romeo and Juliet,\" a tragic tale of young love, was penned around 1595. \"Hamlet,\" one of his most celebrated tragedies, was written in the early 1600s, followed by \"Macbeth,\" a gripping drama exploring themes of ambition and power, around 1606. \"Othello,\" a tragedy revolving around jealousy and deceit, was also composed during this period, believed to be around 1603.";
+
+            Purple_3 p5 = new Purple_3(answer5);
+            p5.Review();
+            Purple_4 p5_1 = new Purple_4(p5.Output, p5.Codes);
+            p5_1.Review();
+            Console.WriteLine(p5_1.Output == answer5);
+
+            string answer6 = "Первое кругосветное путешествие было осуществлено флотом, возглавляемым португальским исследователем Фернаном Магелланом. Путешествие началось 20 сентября 1519 года, когда флот, состоящий из пяти кораблей и примерно 270 человек, отправился из порту Сан-Лукас в Испании. Хотя Магеллан не закончил свое путешествие из-за гибели в битве на Филиппинах в 1521 году, его экспедиция стала первой, которая успешно обогнула Землю и доказала ее круглую форму. Это путешествие открыло новые морские пути и имело огромное значение для картографии и географических открытий.";
+
+            Purple_3 p6 = new Purple_3(answer6);
+            p6.Review();
+            Purple_4 p6_1 = new Purple_4(p6.Output, p6.Codes);
+            p6_1.Review();
+            Console.WriteLine(p6_1.Output == answer6);
+
+
         }
     }
 }

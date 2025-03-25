@@ -26,17 +26,17 @@ namespace Lab_8
             int l = 0, r = 0;
             while (r < _inputArr.Length)
             {
-                while (l < _inputArr.Length && isPunctMark(_inputArr[l]))
+                while (l < _inputArr.Length && (isPunctMark(_inputArr[l]) || char.IsNumber(_inputArr[l])))
                 {
                     l++;
                 }
                 r = l + 1;
-                while (r < _inputArr.Length && !isPunctMark(_inputArr[r]))
+                while (r < _inputArr.Length && (!isPunctMark(_inputArr[r]) && !char.IsNumber(_inputArr[r])))
                 {
                     r++;
                 }
 
-                for (int i = 0; i < (r - l - 1) / 2; i++)
+                for (int i = 0; i < (r - l) / 2; i++)
                 {
                     (_inputArr[l + i], _inputArr[r - 1 - i]) = (_inputArr[r - 1 - i], _inputArr[l + i]);
                 }

@@ -12,12 +12,16 @@ namespace Lab_8
         private (string, char)[] _codes;
         public string Output => _output;
 
-        public (string, char)[] Codes()
+        public (string, char)[] Codes
         {
-            if (_codes == null)
-                return null;
+            get
+            {
+                if (_codes == null)
+                    return null;
 
-            return ((string, char)[]) _codes.Clone();
+                return ((string, char)[])_codes.Clone();
+            }
+       
         }
 
         public Purple_3(string input) : base(input)
@@ -37,14 +41,20 @@ namespace Lab_8
         {
             const int maxReplacements = 5;
 
+            char[] compressedArr = text.ToCharArray();
+
+            text = text.ToLower();
+
             var topPairs = (
                 from i in Enumerable.Range(0, text.Length - 1)
                 let pair = text.Substring(i, 2)
+                where char.IsLetter(pair[0]) && char.IsLetter(pair[1])
                 group pair by pair into g
-                orderby g.Count() descending, text.IndexOf(g.Key)
+                orderby g.Count() descending, text.IndexOf(g.Key) ascending
                 select g.Key
             ).Take(maxReplacements).ToArray();
 
+            
             bool[] check = new bool[94];
             foreach (char c in text)
             {
@@ -64,23 +74,25 @@ namespace Lab_8
                     k++;
                 }
             }
-            char[] compressedArr = text.ToCharArray();
 
-            for (int i = 0; i < compressedArr.Length - 1; i += 2)
+            for (int j = 0; j < replacementCodes.Length; j++)
             {
-                string pair = new string(new char[] { compressedArr[i], compressedArr[i + 1] });
-                for (int j = 0; j < replacementCodes.Length; j++)
+
+                for (int i = 0; i < compressedArr.Length - 1; i++)
                 {
-                    if (pair == topPairs[j])
+                    string pair = new string(new char[] { compressedArr[i], compressedArr[i + 1] });
+                    if (pair.ToLower() == topPairs[j])
                     {
                         compressedArr[i] = replacementCodes[j].Item2;
-                        compressedArr[i + 1] = '\0'; 
-                        break;
+                        compressedArr[i + 1] = '\0';
                     }
                 }
             }
 
+
+
             _output = new string(compressedArr).Replace("\0", "");
+
             _codes = replacementCodes;
         }
 

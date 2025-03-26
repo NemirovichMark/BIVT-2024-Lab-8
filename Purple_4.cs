@@ -1,7 +1,7 @@
 using System.Text;
 
 namespace Lab_8 {
-    class Purple_4 : Purple{
+    public class Purple_4 : Purple{
         private string _output;
         private (string, char)[] _codes;
 

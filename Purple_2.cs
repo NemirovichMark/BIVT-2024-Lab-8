@@ -1,3 +1,5 @@
+using System.Text;
+
 namespace Lab_8
 {
     public class Purple_2 : Purple{
@@ -15,56 +17,60 @@ namespace Lab_8
 
             int maxLineLength = 50;
             int currentLineLength = 0;
-            int lineCount = 0;
+            int lineCount = 1;
 
             for (int i = 0; i < words.Length; i++){
-                if (currentLineLength + words[i].Length + (currentLineLength > 0 ? 1 : 0) <= maxLineLength) {
-                    currentLineLength += words[i].Length + (currentLineLength > 0 ? 1 : 0);
-                }
-                else{
+                int wordLength = words[i].Length;
+                if (currentLineLength > 0) wordLength++;
+                
+                if (currentLineLength + wordLength <= maxLineLength) currentLineLength += wordLength;
+                else
+                {
                     lineCount++;
                     currentLineLength = words[i].Length;
                 }
             }
-            lineCount++;
 
             _output = new string[lineCount];
-
             int currentWordIndex = 0;
-            currentLineLength = 0;
+            
+            for (int lineIndex = 0; lineIndex < lineCount; lineIndex++){
+                int wordsInLineCount = 0;
+                currentLineLength = 0;
+                
+                for (int i = currentWordIndex; i < words.Length; i++){
+                    int wordLength = words[i].Length;
 
-            for (int i = 0; i < lineCount; i++){
-                string currentLine = string.Empty;
-
-                while (currentWordIndex < words.Length && currentLine.Length + words[currentWordIndex].Length + (currentLine.Length > 0 ? 1 : 0) <= maxLineLength){
-                    if (currentLine.Length > 0)
-                        currentLine += " ";
-                    currentLine += words[currentWordIndex];
-                    currentWordIndex++;
-                }
-
-                _output[i] = currentLine;
-            }
-
-            _output = _output.Select(line =>
-            {
-                var wordsInLine = line.Split(' ');
-
-                if (line.Length < maxLineLength){
-                    int spacesToAdd = maxLineLength - line.Length;
-                    if (wordsInLine.Length > 1){
-                        int spaceCount = wordsInLine.Length - 1;
-                        int spacesPerGap = spacesToAdd / spaceCount;
-                        int extraSpaces = spacesToAdd % spaceCount;
-
-                        for (int i = 0; i < extraSpaces; i++) wordsInLine[i] += " ";
-
-                        return string.Join(" ", wordsInLine);
+                    if (currentLineLength > 0) wordLength++;
+                    
+                    if (currentLineLength + wordLength <= maxLineLength){
+                        currentLineLength += wordLength;
+                        wordsInLineCount++;
                     }
-                    else return line + new string(' ', spacesToAdd);
+                    else break;
                 }
-                return line; 
-            }).ToArray();
+
+                string[] lineWords = new string[wordsInLineCount];
+                Array.Copy(words, currentWordIndex, lineWords, 0, wordsInLineCount);
+                currentWordIndex += wordsInLineCount;
+
+                if (lineWords.Length == 1) _output[lineIndex] = lineWords[0];
+                else{
+                    int totalLength = lineWords.Sum(w => w.Length) + (lineWords.Length - 1);
+                    int spacesToAdd = maxLineLength - totalLength;
+                    int baseSpaces = 1 + spacesToAdd / (lineWords.Length - 1);
+                    int extraSpaces = spacesToAdd % (lineWords.Length - 1);
+
+                    StringBuilder sb = new StringBuilder(lineWords[0]);
+                    for (int i = 1; i < lineWords.Length; i++){
+                        int spaces = baseSpaces + (i <= extraSpaces ? 1 : 0);
+                        sb.Append(new string(' ', spaces));
+                        sb.Append(lineWords[i]);
+                    }
+                    
+                    _output[lineIndex] = sb.ToString();
+                }
+            }
         }
         public override string ToString() => string.Join("\n", _output);   
     }

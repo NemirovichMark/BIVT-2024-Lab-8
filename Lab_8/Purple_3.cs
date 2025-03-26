@@ -43,8 +43,6 @@ namespace Lab_8
 
             char[] compressedArr = text.ToCharArray();
 
-            text = text.ToLower();
-
             var topPairs = (
                 from i in Enumerable.Range(0, text.Length - 1)
                 let pair = text.Substring(i, 2)
@@ -81,7 +79,7 @@ namespace Lab_8
                 for (int i = 0; i < compressedArr.Length - 1; i++)
                 {
                     string pair = new string(new char[] { compressedArr[i], compressedArr[i + 1] });
-                    if (pair.ToLower() == topPairs[j])
+                    if (pair == topPairs[j])
                     {
                         compressedArr[i] = replacementCodes[j].Item2;
                         compressedArr[i + 1] = '\0';

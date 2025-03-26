@@ -24,10 +24,7 @@ namespace Lab_8
             if (input == null)
                 return;
             _toString = "";
-            int outputLen = input.Length / 50;
-            if (input.Length % 50 > 0)
-                outputLen++;
-            _output = new string[outputLen + 1];
+            _output = new string[21];
         }
 
         public override void Review()
@@ -41,7 +38,7 @@ namespace Lab_8
 
             for (int i = 0; i < words.Length; i++)
             {
-                if (tempCnt + words[i].Length + Math.Max(wordCnt - 1, 0) > 50)
+                if (tempCnt + words[i].Length + wordCnt > 50)
                 {
                     if (wordCnt == 1)
                     {
@@ -105,7 +102,7 @@ namespace Lab_8
             }
 
             Array.Resize(ref _output, lineIdx);
-            _toString = String.Join("\n", _output);
+            _toString = String.Join("\r\n", _output);
         }
 
         public override string ToString() {

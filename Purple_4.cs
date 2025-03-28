@@ -4,9 +4,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Lab_8 {
-    class Purple_4 : Purple
+    public class Purple_4 : Purple
     {
-        private string _output = "";
+        private string _output = null;
         private (string, char)[] _codes;
     
         public string Output => _output;
@@ -21,6 +21,6 @@ namespace Lab_8 {
             _output = output.ToString();
         }
 
-        public override string ToString() => Output;
+        public override string ToString() => _output;
     }
 }

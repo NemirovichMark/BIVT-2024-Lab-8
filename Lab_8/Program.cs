@@ -10,7 +10,7 @@ namespace Lab_8
     {
         static void Main(string[] args)
         {
-            Test_2();
+            //Test_1();
         }
 
         static void Test_1()
@@ -46,8 +46,8 @@ namespace Lab_8
             p5.Review();
             string output5 = p5.Output;
             string answer5 = "mailliW eraepsekahS, ylediw dedrager sa eno fo eht tsetaerg sretirw ni eht hsilgnE egaugnal, derohtua a latot fo 37 syalp, gnola htiw suoremun smeop dna stennos. eH saw nrob ni novA-nopu-droftartS, dnalgnE, ni 1564, dna deid ni 1616. s'eraepsekahS tsom suomaf skrow, gnidulcni \"oemoR dna teiluJ,\" \"telmaH,\" \"htebcaM,\" dna \"ollehtO,\" erew nettirw gnirud eht etal 16th dna ylrae 17th seirutnec. \"oemoR dna teiluJ,\" a cigart elat fo gnuoy evol, saw dennep dnuora 1595. \"telmaH,\" eno fo sih tsom detarbelec seidegart, saw nettirw ni eht ylrae 1600s, dewollof yb \"htebcaM,\" a gnippirg amard gnirolpxe semeht fo noitibma dna rewop, dnuora 1606. \"ollehtO,\" a ydegart gnivlover dnuora ysuolaej dna tieced, saw osla desopmoc gnirud siht doirep, deveileb ot eb dnuora 1603.";
-            Console.WriteLine(output5);
-            Console.WriteLine(answer5);
+            //Console.WriteLine(output5);
+            //Console.WriteLine(answer5);
             
             Console.WriteLine(output5 == answer5);
 
@@ -84,6 +84,12 @@ namespace Lab_8
             Purple_2 p1 = new Purple_2("После многолетних исследований ученые обнаружили тревожную тенденцию в вырубке лесов Амазонии. Анализ данных показал, что основной участник разрушения лесного покрова – человеческая деятельность. За последние десятилетия рост объема вырубки достиг критических показателей. Главными факторами, способствующими этому, являются промышленные рубки, производство древесины, расширение сельскохозяйственных угодий и незаконная добыча древесины. Это приводит к серьезным экологическим последствиям, таким как потеря биоразнообразия, ухудшение климата и угроза вымирания многих видов животных и растений.");
             p1.Review();
             string answer1 = "После  многолетних  исследований ученые обнаружили\r\nтревожную  тенденцию  в  вырубке  лесов  Амазонии.\r\nАнализ   данных  показал,  что  основной  участник\r\nразрушения    лесного   покрова   –   человеческая\r\nдеятельность. За последние десятилетия рост объема\r\nвырубки  достиг  критических показателей. Главными\r\nфакторами,    способствующими    этому,   являются\r\nпромышленные    рубки,   производство   древесины,\r\nрасширение     сельскохозяйственных    угодий    и\r\nнезаконная   добыча   древесины.  Это  приводит  к\r\nсерьезным  экологическим  последствиям,  таким как\r\nпотеря биоразнообразия, ухудшение климата и угроза\r\nвымирания   многих   видов  животных  и  растений.";
+            
+            foreach(var item in p1.Output)
+            {
+                Console.WriteLine(item);
+            }
+            
             string output1 = p1.ToString();
             Console.WriteLine(output1 == answer1);
 
@@ -128,6 +134,8 @@ namespace Lab_8
             string incoded1 = p1.Output;
             string answer1 = "Пос! много!т\"х исс!дова\"й уч#ые обнаружили тревожную т#д#цию в вырубке !сов Амазо\"и. Анализ дан$х показал, что основной уча%\"к разруше\"я !сного покрова – человеческая деятельно%ь. За пос!д\"е десяти!тия ро% объема вырубки до%иг критических показате!й. Глав$ми факторами, способ%вующими этому, являются промыш!н$е рубки, производ%во древеси$, расшире\"е сельскохозяй%в#$х угодий и незаконная добыча древеси$. Это приводит к серьез$м экологическим пос!д%виям, таким как потеря биоразнообразия, ухудше\"е климата и угроза вымира\"я многих видов живот$х и ра%е\"й.";
             Console.WriteLine(answer1 == incoded1);
+
+            
 
 
             Purple_3 p2 = new Purple_3("Двигатель самолета – это сложная инженерная конструкция, обеспечивающая подъем, управление и движение в воздухе. Он состоит из множества компонентов, каждый из которых играет важную роль в общей работе механизма. Внутреннее устройство двигателя включает в себя компрессор, камеру сгорания, турбину и системы управления и охлаждения. Принцип работы основан на воздушно-топливной смеси, которая подвергается сжатию, воспламенению и расширению, обеспечивая движение воздушного судна.");

@@ -67,7 +67,7 @@ namespace Lab_8
                         }
                         
                     }
-                    _output[lineIdx++] = tempString;
+                    _output[lineIdx++] = tempString ;
                     tempCnt = words[i].Length;
                     wordCnt = 1;
                 }
@@ -80,7 +80,8 @@ namespace Lab_8
             if (wordCnt == 1)
             {
                 _output[lineIdx++] = words[words.Length - 1];
-            } else
+            }
+            else
             {
                 tempString = "";
                 spaces = (50 - tempCnt) / (wordCnt - 1);
@@ -88,19 +89,23 @@ namespace Lab_8
                 for (int j = words.Length - wordCnt; j < words.Length; j++)
                 {
                     tempString += words[j];
-                    for (int k = 0; k < spaces; k++)
+                    if (j != words.Length - 1)
                     {
-                        tempString += ' ';
-                    }
-                    if (add > 0)
-                    {
-                        tempString += ' ';
-                        add--;
+                        for (int k = 0; k < spaces; k++)
+                        {
+                            tempString += ' ';
+                        }
+                        if (add > 0)
+                        {
+                            tempString += ' ';
+                            add--;
+                        }
                     }
                 }
                 _output[lineIdx++] = tempString;
-            }
 
+
+            }
             Array.Resize(ref _output, lineIdx);
             _toString = String.Join("\r\n", _output);
         }

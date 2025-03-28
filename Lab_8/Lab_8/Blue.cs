@@ -15,5 +15,6 @@ namespace Lab_8
             _input = input;
         }
         public abstract void Rewiew();
+        public abstract void ToString();
     }
 }

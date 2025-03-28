@@ -6,7 +6,12 @@ namespace Lab_8
         
         private string[] _output;
 
-        public string[] Output => (string[]) _output.Clone();
+        public string[] Output {
+            get{
+                if (_output == null) return null;
+                return (string[]) _output.Clone();
+            }
+        }
 
         public Purple_2(string input): base(input){}
 

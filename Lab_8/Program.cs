@@ -10,7 +10,8 @@ namespace Lab_8
     {
         static void Main(string[] args)
         {
-            //Test_1();
+            //Test_3();
+
         }
 
         static void Test_1()

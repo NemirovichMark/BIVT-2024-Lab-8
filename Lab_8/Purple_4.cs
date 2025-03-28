@@ -13,7 +13,7 @@ namespace Lab_8
         public string Output => _output;
         public Purple_4(string input, (string, char)[]codes) : base(input)
         {
-            _output = "";
+            _output = default(string);
             _codes = codes;
 
         }
@@ -30,6 +30,7 @@ namespace Lab_8
         {
             char[] decodedChars = compressedText.ToCharArray();
 
+            _output = "";
             for (int i = 0; i < decodedChars.Length; i++)
             {
                 bool replaced = false;

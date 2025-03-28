@@ -26,7 +26,8 @@ namespace Lab_8
 
         public Purple_3(string input) : base(input)
         {
-            _output = "";
+            _output = default(string);
+            _codes = default((string, char)[]);
         }
         public override void Review()
         {

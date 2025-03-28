@@ -23,8 +23,8 @@ namespace Lab_8
         public Purple_2(string input) : base(input) {
             if (input == null)
                 return;
-            _toString = "";
-            _output = new string[21];
+            _toString = default(string);
+            _output = default(string[]);
         }
 
         public override void Review()
@@ -35,6 +35,7 @@ namespace Lab_8
             int wordCnt = 0;
             string tempString;
 
+            _output = new string[21];
 
             for (int i = 0; i < words.Length; i++)
             {

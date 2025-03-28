@@ -1,0 +1,14 @@
+C:\Users\sanik\source\repos\Lab_8\Lab_8\obj\Debug\Lab_8.csproj.AssemblyReference.cache
+C:\Users\sanik\source\repos\Lab_8\Lab_8\obj\Debug\Lab_8.csproj.CoreCompileInputs.cache
+C:\Users\sanik\source\repos\Lab_8\Lab_8\bin\Debug\Lab_8.exe.config
+C:\Users\sanik\source\repos\Lab_8\Lab_8\bin\Debug\Lab_8.exe
+C:\Users\sanik\source\repos\Lab_8\Lab_8\bin\Debug\Lab_8.pdb
+C:\Users\sanik\source\repos\Lab_8\Lab_8\obj\Debug\Lab_8.exe
+C:\Users\sanik\source\repos\Lab_8\Lab_8\obj\Debug\Lab_8.pdb
+C:\Users\sanik\Source\Repos\BIVT-2024-Lab-8\Lab_8\bin\Debug\Lab_8.exe.config
+C:\Users\sanik\Source\Repos\BIVT-2024-Lab-8\Lab_8\bin\Debug\Lab_8.exe
+C:\Users\sanik\Source\Repos\BIVT-2024-Lab-8\Lab_8\bin\Debug\Lab_8.pdb
+C:\Users\sanik\Source\Repos\BIVT-2024-Lab-8\Lab_8\obj\Debug\Lab_8.csproj.AssemblyReference.cache
+C:\Users\sanik\Source\Repos\BIVT-2024-Lab-8\Lab_8\obj\Debug\Lab_8.csproj.CoreCompileInputs.cache
+C:\Users\sanik\Source\Repos\BIVT-2024-Lab-8\Lab_8\obj\Debug\Lab_8.exe
+C:\Users\sanik\Source\Repos\BIVT-2024-Lab-8\Lab_8\obj\Debug\Lab_8.pdb

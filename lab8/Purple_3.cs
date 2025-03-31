@@ -112,32 +112,77 @@ namespace Lab_8{
                 }
             }
 
-            foreach (var i in _codes){
-                System.Console.WriteLine(i);
-            }
+            // foreach (var i in _codes){
+            //     System.Console.WriteLine(i);
+            // }
 
             //Сделать чтобы в слове заменялась самая частая комбинация а не первая попавшая
 
-            string ans = "";
-            for (int i = 0; i < chars.Length; i++){//проходим по всем символам
-                bool changed = false;
-                if (i+1 >= chars.Length){ //проверка
-                    break;
-                }
+            
+            // for (int i = 0; i < chars.Length; i++){//проходим по всем символам
+            //     bool changed = false;
+            //     if (i+1 >= chars.Length){ //проверка
+            //         break;
+            //     }
 
-                for (int j = 0; j < _unique.Length; j++){//проверяем будем ли менять символ
-                    if ($"{chars[i]}{chars[i+1]}" == _unique[j]){
-                        ans += _codes[j];
-                        i++;
-                        changed = true;
-                        break;
+            //     for (int j = 0; j < _unique.Length; j++){//проверяем будем ли менять символ
+            //         if ($"{chars[i]}{chars[i+1]}" == _unique[j]){
+            //             ans += _codes[j];
+            //             i++;
+            //             changed = true;
+            //             break;
+            //         }
+            //     }
+            //     if (!changed){//если ничего не меняли добавляем просто букву
+            //         ans += chars[i];
+            //     }
+            // }
+
+            // string input = _output;
+            // System.Console.WriteLine(input);
+            // for (int i = 0; i < _unique.Length; i++){
+            //     string ans = "";
+            //     for (int j = 0; j < input.Length; j++){
+            //         // System.Console.WriteLine($"{input[j]} - {_codes[i]}");
+            //     }
+            //     System.Console.WriteLine(input);
+            // }
+            
+            string input = _output;
+            //System.Console.WriteLine(input);
+            for (int i = 0; i < _unique.Length; i++){
+                string ans = "";
+                for (int j = 0; j < input.Length; j++){
+                    bool changed = false;
+                    if (j + 1 >= input.Length){
+                        ans += input[j];
+                        continue;
                     }
-                }
-                if (!changed){//если ничего не меняли добавляем просто букву
-                    ans += chars[i];
-                }
+
+                    if ($"{input[j]}{input[j+1]}" == _unique[i]){
+                        ans += _codes[i];
+                        j++;
+                    }
+                    else{
+                        ans += input[j];
+                    }
+                    // if ($"{input[j]}{input[j+1]}" == _unique[i]){
+                    //     ans += _codes[i];
+                    //     j++;
+                    //     changed = true;
+                    //     break;
+                    // }
+                    
+                    // if (!changed){//если ничего не меняли добавляем просто букву
+                    // ans += input[j];
+                    // }
+                }            
+                input = ans;
+                // System.Console.WriteLine(input);
             }
-            _output = ans;
+            
+            _output = input;
+            //System.Console.WriteLine(input);
         }
         public override string ToString() { return _output; }
     }

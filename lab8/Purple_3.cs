@@ -13,6 +13,9 @@ namespace Lab_8{
         {
             get
             {
+                if (_unique == null || _counts == null || _codes == null){
+                    return null;
+                }
                 var result = new (string, char)[Math.Min(5, _unique.Length)];//учитывать что может использоваться менее чем 5 симовлов
                 for (int i = 0; i < result.Length; i++)
                     result[i] = (_unique[i], _codes[i]);
@@ -154,7 +157,7 @@ namespace Lab_8{
                 string ans = "";
                 for (int j = 0; j < input.Length; j++){
                     bool changed = false;
-                    if (j + 1 >= input.Length){
+                    if (j + 1 >= input.Length){//Чтобы докинуть последний символ в строку
                         ans += input[j];
                         continue;
                     }

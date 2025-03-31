@@ -9,22 +9,20 @@ namespace Lab_8
         {
             string input1 = "Двигатель самолета – это сложная инженерная конструкция, обеспечивающая подъем, управление и движение в воздухе. Он состоит из множества компонентов, каждый из которых играет важную роль в общей работе механизма. Внутреннее устройство двигателя включает в себя компрессор, камеру сгорания, турбину и системы управления и охлаждения. Принцип работы основан на воздушно-топливной смеси, которая подвергается сжатию, воспламенению и расширению, обеспечивая движение воздушного судна.";
             string answer = "Двигатель самолета – э$ сложная инж!ерная кон%рукция, обеспечивающая подъем, уп#вл!ие и движ!ие в воздухе. Он сос$ит из множе%ва компон!$в, каждый из ко$рых иг#ет важную роль в общей #боте меха\"зма. Внутр!нее у%рой%во двигателя включает в себя компрессор, камеру сго#\"я, турбину и си%емы уп#вл!ия и охлажд!ия. Принцип #боты основан на воздушно-$пливной смеси, ко$#я подвергается сжатию, восплам!!ию и #сшир!ию, обеспечивая движ!ие воздушного судна.";
-            
+
             Purple_3 s = new Purple_3(input1);
             s.Review();
+            string output = s.ToString();
+            System.Console.WriteLine(output);
+            for (int i = 0; i < s.Codes.Length; i++){
+                System.Console.WriteLine(s.Codes[i].ToString());
+            }
+            System.Console.WriteLine(output==answer);
 
             Purple_4 k = new Purple_4(answer, s.Codes);
             k.Review();
-            string output = k.ToString();
-            System.Console.WriteLine(output == input1);
-            // Purple_3 s = new Purple_3(input1);
-            // s.Review();
-            // string output = s.ToString();
-            // System.Console.WriteLine(output);
-            // for (int i = 0; i < s.Codes.Length; i++){
-            //     System.Console.WriteLine(s.Codes[i].ToString());
-            // }
-            // System.Console.WriteLine(output==answer);
+            string output4 = k.ToString();
+            System.Console.WriteLine(output4 == input1);
         }
     }
     

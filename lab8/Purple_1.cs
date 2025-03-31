@@ -8,7 +8,7 @@ namespace Lab_8{
         public string Output => _output;
 
         public Purple_1(string input) : base(input) { 
-            _output = "";
+            _output = null;
         }
 
         public override void Review()

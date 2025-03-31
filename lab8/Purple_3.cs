@@ -24,7 +24,7 @@ namespace Lab_8{
         }
 
         public Purple_3(string input) : base(input) { 
-            _output = input;
+            _output = null;
             _unique = new string[0];
             _codes = new char[0];
             _counts = new int[0];
@@ -151,7 +151,7 @@ namespace Lab_8{
             //     System.Console.WriteLine(input);
             // }
             
-            string input = _output;
+            string input = Input;
             //System.Console.WriteLine(input);
             for (int i = 0; i < _unique.Length; i++){
                 string ans = "";

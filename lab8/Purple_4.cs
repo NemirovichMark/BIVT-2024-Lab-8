@@ -20,13 +20,13 @@ namespace Lab_8{
         }
 
         public Purple_4(string input, (string, char)[] codes) : base(input) { 
-            _output = input;
+            _output = null;
             _codes = codes;
         }
 
         public override void Review()
         {
-            string input = _output; //Изначальная строка
+            string input = Input; //Изначальная строка
             //char[] chars = Input.ToCharArray();
             for (int i = 0; i < _codes.Length; i++){
                 string ans = "";

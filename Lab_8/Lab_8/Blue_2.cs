@@ -76,9 +76,9 @@ namespace Lab_8
                 }
             }
         }
-        public override void ToString()
+        public override string ToString()
         {
-            Console.WriteLine(Output);
+            return Output;
         }
     }
 }

@@ -51,12 +51,13 @@ namespace Lab_8
             while(!String.IsNullOrEmpty(tmp)) 
                 tmp = SplitOne(tmp);
         }
-        public override void ToString()
+        public override string ToString()
         {
+            string str = "";
             for(int k = 0; k < _output.Length; k++)
-            {
-                Console.WriteLine(_output[k]);
-            }
+                str += $"{_output[k]}\n";
+            str = str.Remove(str.Length - 1, 1);
+            return str;
         }
     }
 }

@@ -28,7 +28,7 @@ namespace Lab_8
             if (start == str.Length) return (-1, str.Length);
 
             int end = start;
-            while(end < str.Length && Char.IsLetter(str[end]))
+            while(end < str.Length && (Char.IsLetter(str[end]) || str[end] == '\'') || str[end] == '-')
                 end++;
             
             return (start, end - 1);

@@ -55,7 +55,7 @@ namespace Lab_8
             if (String.IsNullOrEmpty(str) || prev < 0) return -1;
 
             int index = prev+1;
-            while (index < str.Length && Char.IsLetter(str[index])) // предыдущее слово
+            while (index < str.Length && (Char.IsLetter(str[index]) || str[index] == '\'') || str[index] == '-') // предыдущее слово
                 index++;
             while (index < str.Length && !Char.IsLetter(str[index])) // пространство между словами
                 index++;

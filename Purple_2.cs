@@ -4,9 +4,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Lab_8 {
-    public class Purple_2 : Purple
+    class Purple_2 : Purple
     {
-        private string[] _output = new string[0];
+        private string[] _output;
 
         public string[] Output
         {
@@ -66,7 +66,7 @@ namespace Lab_8 {
 
         private string FormatSpaces(string[] words, int lineLength)
         {
-            if (words.Length == 1) return words[0];
+            if (words.Length == 1) return words[0].PadRight(lineLength);
             
             int lenRem = lineLength - words.Sum(w => w.Length);;
             int posCnt = words.Length - 1;
@@ -84,6 +84,6 @@ namespace Lab_8 {
             return formattedLine.ToString();
         }
 
-        public override string ToString() => string.Join("\n", _output);
+        public override string ToString() => string.Join("\n", Output);
     }
 }

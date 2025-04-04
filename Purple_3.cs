@@ -13,7 +13,6 @@ namespace Lab_8
         public (string, char)[] Codes { get; private set; }
         public Purple_3(string input) : base(input)
         {
-            Output = "";
             Codes = new (string, char)[0];
             signs = new char[0];
             for (char c = ' '; signs.Length < 5 && c <= '~' ; c++)

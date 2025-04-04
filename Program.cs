@@ -10,9 +10,9 @@ namespace Lab_8
     {
         static void Main(string[] args)
         {
-            //Check1();
-            //Check2();
-            //Check3();
+            Check1();
+            Check2();
+            Check3();
             Check4();
         }
 

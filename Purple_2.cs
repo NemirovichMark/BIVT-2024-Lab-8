@@ -11,14 +11,12 @@ namespace Lab_8
     {
         private string[] _rows;
         public string[] Output => _rows;
-        public Purple_2(string input) : base(input)
-        {
-            _rows = new string[0];
-        }
+        public Purple_2(string input) : base(input) {}
         public override void Review()
         {
             if (_input == null) return;
 
+            _rows = new string[0];
             string text = _input;
             while (text.Length > 50)
             {

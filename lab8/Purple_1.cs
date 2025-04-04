@@ -13,6 +13,7 @@ namespace Lab_8{
 
         public override void Review()
         {
+            string[] lst = new string[0];
             char[] chars = Input.ToCharArray();
             string ans = "";
             int l = 0, r = 0;

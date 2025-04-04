@@ -17,6 +17,8 @@ namespace Lab_8
 
         public override void Review()
         {
+            if (Input == null) return;
+            
             var words = Input.Split();
             var strings = new string[1][];
             strings[0] = new string[0];
@@ -50,10 +52,16 @@ namespace Lab_8
             {
                 cntWords = strings[i].Length;
                 int cntSpaces = cntWords - 1;
-                
-                if (cntSpaces == 0) continue;
 
                 int lengthSpaces = 50 - lengths[i];
+                
+                if (cntSpaces == 0)
+                {
+                    strings[i][0] += new string(' ', lengthSpaces);
+                        
+                    continue;
+                }
+                
                 int minSpaceLength = lengthSpaces / cntSpaces;
                 int cntOneMoreSpace = lengthSpaces - minSpaceLength * cntSpaces;
 

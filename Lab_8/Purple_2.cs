@@ -108,7 +108,7 @@ namespace Lab_8
 
             }
             Array.Resize(ref _output, lineIdx);
-            _toString = String.Join("\r\n", _output);
+            _toString = String.Join("\n", _output);
         }
 
         public override string ToString() {

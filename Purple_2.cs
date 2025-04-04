@@ -66,7 +66,7 @@ namespace Lab_8 {
 
         private string FormatSpaces(string[] words, int lineLength)
         {
-            if (words.Length == 1) return words[0].PadRight(lineLength);
+            if (words.Length == 1) return words[0];
             
             int lenRem = lineLength - words.Sum(w => w.Length);;
             int posCnt = words.Length - 1;
@@ -84,6 +84,6 @@ namespace Lab_8 {
             return formattedLine.ToString();
         }
 
-        public override string ToString() => string.Join("\n", Output);
+        public override string ToString() => string.Join("\n", _output);
     }
 }

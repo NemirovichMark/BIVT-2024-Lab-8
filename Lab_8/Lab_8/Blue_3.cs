@@ -120,7 +120,7 @@ namespace Lab_8
                 }
             }
         }
-        public override void Rewiew()
+        public override void Review()
         {
             CountAllLetters();
             CountLetterSort();

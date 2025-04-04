@@ -55,7 +55,7 @@ namespace Lab_8
             string res = str.Remove(startIndex, endIndex - startIndex + 1);
             return res;
         }
-        public override void Rewiew()
+        public override void Review()
         {
             while (true)
             {

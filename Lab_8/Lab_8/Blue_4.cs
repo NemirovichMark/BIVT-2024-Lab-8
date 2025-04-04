@@ -62,7 +62,7 @@ namespace Lab_8
             if (number == double.NaN) return;
             _output += (int)number;
         }
-        public override void Rewiew()
+        public override void Review()
         {
             int index = 0;
             while(index < Input.Length)

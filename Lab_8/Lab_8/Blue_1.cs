@@ -45,7 +45,7 @@ namespace Lab_8
             return str;
         }
 
-        public override void Rewiew()
+        public override void Review()
         {
             string tmp = Input;
             while(!String.IsNullOrEmpty(tmp)) 

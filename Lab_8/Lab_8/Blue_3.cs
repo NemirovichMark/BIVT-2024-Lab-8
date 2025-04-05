@@ -126,12 +126,13 @@ namespace Lab_8
             CountLetterSort();
             FindAllFrequency();
         }
-        public override string ToString()
+        public string ToString()
         {
             // [letter][-][freq][\n] * _output.Length
             string str = "";
             foreach( (char letter, double freq) in _output)
                 str += $"{letter}-{Math.Round(freq, 4)}\n";
+            if(String.IsNullOrEmpty(str)) return str;
             str = str.Remove(str.Length - 1, 1);
             return str;
         }

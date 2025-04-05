@@ -13,7 +13,6 @@ namespace Lab_8{
 
         public override void Review()
         {
-            string[] lst = new string[0];
             char[] chars = Input.ToCharArray();
             string ans = "";
             int l = 0, r = 0;
@@ -22,6 +21,13 @@ namespace Lab_8{
                     r = l;
                 }
                 else{
+                    if (char.IsNumber(chars[l])){
+                        while (!isChar(chars[l])){
+                            ans += chars[l];
+                            l++;
+                        }
+                    }
+                    
                     ans += chars[l];
                     l++;
                     continue;

@@ -7,23 +7,26 @@ namespace Lab_8
     {
         static void Main(string[] args)
         {
-            Test_2();
-            // string input1 = "Двигатель самолета – это сложная инженерная конструкция, обеспечивающая подъем, управление и движение в воздухе. Он состоит из множества компонентов, каждый из которых играет важную роль в общей работе механизма. Внутреннее устройство двигателя включает в себя компрессор, камеру сгорания, турбину и системы управления и охлаждения. Принцип работы основан на воздушно-топливной смеси, которая подвергается сжатию, воспламенению и расширению, обеспечивая движение воздушного судна.";
-            // string answer = "Двигатель самолета – э$ сложная инж!ерная кон%рукция, обеспечивающая подъем, уп#вл!ие и движ!ие в воздухе. Он сос$ит из множе%ва компон!$в, каждый из ко$рых иг#ет важную роль в общей #боте меха\"зма. Внутр!нее у%рой%во двигателя включает в себя компрессор, камеру сго#\"я, турбину и си%емы уп#вл!ия и охлажд!ия. Принцип #боты основан на воздушно-$пливной смеси, ко$#я подвергается сжатию, восплам!!ию и #сшир!ию, обеспечивая движ!ие воздушного судна.";
 
-            // Purple_3 s = new Purple_3(input1);
+            Purple_1 p5 = new Purple_1("William Shakespeare, widely regarded as one of the greatest writers in the English language, authored a total of 37 plays, along with numerous poems and sonnets. He was born in Stratford-upon-Avon, England, in 1564, and died in 1616. Shakespeare's most famous works, including \"Romeo and Juliet,\" \"Hamlet,\" \"Macbeth,\" and \"Othello,\" were written during the late 16th and early 17th centuries. \"Romeo and Juliet,\" a tragic tale of young love, was penned around 1595. \"Hamlet,\" one of his most celebrated tragedies, was written in the early 1600s, followed by \"Macbeth,\" a gripping drama exploring themes of ambition and power, around 1606. \"Othello,\" a tragedy revolving around jealousy and deceit, was also composed during this period, believed to be around 1603.");
+            p5.Review();
+            string output5 = p5.Output;
+            string answer5 = "mailliW eraepsekahS, ylediw dedrager sa eno fo eht tsetaerg sretirw ni eht hsilgnE egaugnal, derohtua a latot fo 37 syalp, gnola htiw suoremun smeop dna stennos. eH saw nrob ni novA-nopu-droftartS, dnalgnE, ni 1564, dna deid ni 1616. s'eraepsekahS tsom suomaf skrow, gnidulcni \"oemoR dna teiluJ,\" \"telmaH,\" \"htebcaM,\" dna \"ollehtO,\" erew nettirw gnirud eht etal 16th dna ylrae 17th seirutnec. \"oemoR dna teiluJ,\" a cigart elat fo gnuoy evol, saw dennep dnuora 1595. \"telmaH,\" eno fo sih tsom detarbelec seidegart, saw nettirw ni eht ylrae 1600s, dewollof yb \"htebcaM,\" a gnippirg amard gnirolpxe semeht fo noitibma dna rewop, dnuora 1606. \"ollehtO,\" a ydegart gnivlover dnuora ysuolaej dna tieced, saw osla desopmoc gnirud siht doirep, deveileb ot eb dnuora 1603.";
+            //Console.WriteLine(output5);
+            //Console.WriteLine(answer5);
+            
+            Console.WriteLine(output5 == answer5);
+            //Test_2();
+            // string input1 = "mailliW eraepsekahS, ylediw dedrager sa eno fo eht tsetaerg sretirw ni eht hsilgnE egaugnal, derohtua a latot fo 37 syalp, gnola htiw suoremun smeop dna stennos. eH saw nrob ni novA-nopu-droftartS, dnalgnE, ni 1564, dna deid ni 1616. s'eraepsekahS tsom suomaf skrow, gnidulcni \"oemoR dna teiluJ,\" \"telmaH,\" \"htebcaM,\" dna \"ollehtO,\" erew nettirw gnirud eht etal 16th dna ylrae 17th seirutnec. \"oemoR dna teiluJ,\" a cigart elat fo gnuoy evol, saw dennep dnuora 1595. \"telmaH,\" eno fo sih tsom detarbelec seidegart, saw nettirw ni eht ylrae 1600s, dewollof yb \"htebcaM,\" a gnippirg amard gnirolpxe semeht fo noitibma dna rewop, dnuora 1606. \"ollehtO,\" a ydegart gnivlover dnuora ysuolaej dna tieced, saw osla desopmoc gnirud siht doirep, deveileb ot eb dnuora 1603.";
+            // //string answer = "Двигатель самолета – э$ сложная инж!ерная кон%рукция, обеспечивающая подъем, уп#вл!ие и движ!ие в воздухе. Он сос$ит из множе%ва компон!$в, каждый из ко$рых иг#ет важную роль в общей #боте меха\"зма. Внутр!нее у%рой%во двигателя включает в себя компрессор, камеру сго#\"я, турбину и си%емы уп#вл!ия и охлажд!ия. Принцип #боты основан на воздушно-$пливной смеси, ко$#я подвергается сжатию, восплам!!ию и #сшир!ию, обеспечивая движ!ие воздушного судна.";
+            // string input2 = "mailliW eraepsekahS, ylediw dedrager sa eno fo eht tsetaerg sretirw ni eht hsilgnE egaugnal, derohtua a latot fo 37 syalp, gnola htiw suoremun smeop dna stennos. eH saw nrob ni novA-nopu-droftartS, dnalgnE, ni 1564, dna deid ni 1616. s'eraepsekahS tsom suomaf skrow, gnidulcni \"oemoR dna teiluJ,\" \"telmaH,\" \"htebcaM,\" dna \"ollehtO,\" erew nettirw gnirud eht etal 16ht dna ylrae 17ht seirutnec. \"oemoR dna teiluJ,\" a cigart elat fo gnuoy evol, saw dennep dnuora 1595. \"telmaH,\" eno fo sih tsom detarbelec seidegart, saw nettirw ni eht ylrae 1600s, dewollof yb \"htebcaM,\" a gnippirg amard gnirolpxe semeht fo noitibma dna rewop, dnuora 1606. \"ollehtO,\" a ydegart gnivlover dnuora ysuolaej dna tieced, saw osla desopmoc gnirud siht doirep, deveileb ot eb dnuora 1603.";
+            // //17th
+            // // System.Console.WriteLine($"{input1.Length} - {input2.Length}");
+            // // System.Console.WriteLine(input1==input2);
+            // Purple_1 s = new Purple_1(input1);
             // s.Review();
             // string output = s.ToString();
             // System.Console.WriteLine(output);
-            // for (int i = 0; i < s.Codes.Length; i++){
-            //     System.Console.WriteLine(s.Codes[i].ToString());
-            // }
-            // System.Console.WriteLine(output==answer);
-
-            // Purple_4 k = new Purple_4(answer, s.Codes);
-            // k.Review();
-            // string output4 = k.ToString();
-            // System.Console.WriteLine(output4 == input1);
         }
     
         static void Test_2()

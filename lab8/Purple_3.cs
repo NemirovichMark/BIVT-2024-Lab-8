@@ -38,9 +38,6 @@ namespace Lab_8{
             bool[] usedChar = new bool[256];
 
             for (int i = 0; i < chars.Length-1; i++){
-                if (isChar(chars[i]) || isChar(chars[i+1])){//проверяем можем ли мы его менять
-                    continue;
-                }
                 //chars[i] автоматически переводится в аски код и на этой позиции отмечается флаг 
                 if (chars[i] >= 0 && chars[i] < 256)
                     usedChar[chars[i]] = true;
@@ -48,9 +45,9 @@ namespace Lab_8{
                 if (chars[i+1] >= 0 && chars[i+1] < 256)
                     usedChar[chars[i+1]] = true;
 
-                // usedChar[chars[i]] = true; //
-                // usedChar[chars[i+1]] = true;
-
+                if (isChar(chars[i]) || isChar(chars[i+1])){//проверяем можем ли мы его менять
+                    continue;
+                }
                 //считаем сколько раз встерчаются разные уникальные пары
                 bool found = false;
                 for (int j = 0; j < _unique.Length; j++){
@@ -187,6 +184,8 @@ namespace Lab_8{
             _output = input;
             //System.Console.WriteLine(input);
         }
+
+
         public override string ToString() { return _output; }
     }
 }

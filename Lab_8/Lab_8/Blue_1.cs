@@ -22,6 +22,7 @@ namespace Lab_8
         }
         private string SplitOne(string str)
         {
+            if (String.IsNullOrEmpty(str)) return null;
             if (str.Length < 50)
             {
                 AddToOutput(str);
@@ -51,11 +52,12 @@ namespace Lab_8
             while(!String.IsNullOrEmpty(tmp)) 
                 tmp = SplitOne(tmp);
         }
-        public override string ToString()
+        public string ToString()
         {
             string str = "";
             for(int k = 0; k < _output.Length; k++)
                 str += $"{_output[k]}\n";
+            if(String.IsNullOrEmpty(str)) return str;
             str = str.Remove(str.Length - 1, 1);
             return str;
         }

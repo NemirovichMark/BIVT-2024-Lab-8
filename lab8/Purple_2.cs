@@ -17,7 +17,7 @@ namespace Lab_8{
         }
 
         public Purple_2(string input) : base(input) { 
-            _output = new string[0];
+            _output = null;
         }
 
         public override void Review()
@@ -54,16 +54,18 @@ namespace Lab_8{
 
                 tmp = SpaceBetween(tmp.Trim());//.Trim убирает пробелы в начале и конце
                 
-                //если не последняя строчка переносим строку
+                //добавляем в список строку без переноса
+                Array.Resize(ref lst, lst.Length+1);
+                lst[lst.Length-1] = tmp;
+
+                //если не последняя строчка добавляем перенос
                 if (target+1 < chars.Length-1){
                     tmp += "\n";
                 }
                 // else{
                 //     tmp += chars[target];
                 // }
-                Array.Resize(ref lst, lst.Length+1);
-                lst[lst.Length-1] = tmp;
-                ans += tmp; //убираем пробелы по краям
+                ans += tmp; 
                 l = target+1;   
                 //System.Console.WriteLine(ans);             
             }
@@ -75,7 +77,7 @@ namespace Lab_8{
 
         private string SpaceBetween(string input){
             int count = 0;
-            for (int i = 0; i < input.Length; i++){
+            for (int i = 0; i < input.Length; i++){//считаем количество пробелов
                 if (input[i] == ' '){
                     count++;
                 }
@@ -84,28 +86,28 @@ namespace Lab_8{
                 return input;
             }
             
-            int Spaces = 50 - input.Length;
-            int deafultSpace = 1 + Spaces / count;
+            int Spaces = 50 - input.Length;//сколько пробелов не хватает
+            int deafultSpace = 1 + Spaces / count; //короткий пробел 
             int extraSpace = Spaces % count; //количество мест в которые будут добавлены "лишние пробелы" которые не делятся поровну
 
             string result = "";
-            int added = 0;
+            int added = 0;// считаем сколько пробелов уже добавлено
             int Space = deafultSpace;
             for (int i = 0; i < input.Length; i++)
             {
                 if (input[i] == ' ')
                 {
-                    if (added < extraSpace)
+                    if (added < extraSpace)//значит нужно добавить лишний пробел
                     {
-                        Space = deafultSpace + 1;
+                        Space = deafultSpace + 1;//дефолтный пробел + лишний
                     }
                     else
                     {
-                        Space = deafultSpace;
+                        Space = deafultSpace;//обычное количество пробелов
                     }
                     
-                    result += new string(' ', Space);//char n раз
-                    added++;
+                    result += new string(' ', Space);//добавлям значения " " space раз
+                    added++;//обеовляем количество добавленных пробелов
                 }
                 else
                 {
@@ -117,9 +119,11 @@ namespace Lab_8{
 
         public override string ToString() { 
             string ans = "";
-            for (int i = 0; i < _output.Length; i++){
-                ans += _output[i].ToString();
+            for (int i = 0; i < _output.Length-1; i++){
+                ans += _output[i].ToString()+"\n";//во все строчки кроме последней добавляем перенос
             }
+            ans += _output[_output.Length-1].ToString();//докидываем последнюю строчку без переноса
+            //System.Console.WriteLine(ans);
             return ans;
         }
     }

@@ -22,7 +22,7 @@ namespace Lab_8
                 from++;
             if (from == str.Length) return null; // после from чисел нет
 
-            if (str[from - 1] == '-') number += '-';
+            if (from != 0 && str[from - 1] == '-') number += '-';
             else number += '+';
 
             while (from < str.Length && Char.IsDigit(str[from])) // записываем число
@@ -64,6 +64,8 @@ namespace Lab_8
         }
         public override void Review()
         {
+            if(String.IsNullOrEmpty(Input)) return;
+
             int index = 0;
             while(index < Input.Length)
             {
@@ -74,7 +76,7 @@ namespace Lab_8
             }
         }
 
-        public override string ToString()
+        public string ToString()
         {
             string str = $"{_output}";
             return str;

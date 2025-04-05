@@ -35,7 +35,7 @@ namespace Lab_8
         }
         private (int, int) FindWordWithSeq (string str, string sequense)
         {
-            if (String.IsNullOrEmpty(str) || String.IsNullOrEmpty(sequense)) return (-1, str.Length);
+            if (String.IsNullOrEmpty(str) || String.IsNullOrEmpty(sequense)) return (-1, 0);
 
             (int start, int end) = FindWord(str, 0);
             
@@ -76,7 +76,7 @@ namespace Lab_8
                 }
             }
         }
-        public override string ToString()
+        public string ToString()
         {
             return Output;
         }

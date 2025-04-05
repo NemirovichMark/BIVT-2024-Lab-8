@@ -52,7 +52,7 @@ namespace Lab_8
             while(!String.IsNullOrEmpty(tmp)) 
                 tmp = SplitOne(tmp);
         }
-        public string ToString()
+        public override string ToString()
         {
             string str = "";
             for(int k = 0; k < _output.Length; k++)

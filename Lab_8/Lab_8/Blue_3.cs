@@ -126,7 +126,7 @@ namespace Lab_8
             CountLetterSort();
             FindAllFrequency();
         }
-        public string ToString()
+        public override string ToString()
         {
             // [letter][-][freq][\n] * _output.Length
             string str = "";

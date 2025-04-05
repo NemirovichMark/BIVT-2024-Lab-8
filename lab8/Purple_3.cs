@@ -26,7 +26,7 @@ namespace Lab_8{
         public Purple_3(string input) : base(input) { 
             _output = null;
             _unique = new string[0];
-            _codes = new char[0];
+            _codes = null;
             _counts = new int[0];
         }
 
@@ -160,11 +160,11 @@ namespace Lab_8{
                     }
 
                     if ($"{input[j]}{input[j+1]}" == _unique[i]){
-                        ans += _codes[i];
+                        ans += _codes[i];//подставляем уникальный код
                         j++;
                     }
                     else{
-                        ans += input[j];
+                        ans += input[j];//просто добавляем символ
                     }
                     // if ($"{input[j]}{input[j+1]}" == _unique[i]){
                     //     ans += _codes[i];

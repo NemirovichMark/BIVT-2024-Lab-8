@@ -7,17 +7,18 @@ namespace Lab_8{
         private (string, char)[] _codes;
 
         public string Output => _output;
-        public (string, char)[] Codes{
-            get{
-                if (_codes == null){
-                    return null;
-                }
+        public (string, char)[] Codes => _codes;
+        // public (string, char)[] Codes{
+        //     get{
+        //         if (_codes == null){
+        //             return null;
+        //         }
 
-                (string, char)[] copy = new (string, char)[_codes.Length];
-                Array.Copy(_codes, copy, _codes.Length);
-                return copy;
-            }
-        }
+        //         (string, char)[] copy = new (string, char)[_codes.Length];
+        //         Array.Copy(_codes, copy, _codes.Length);
+        //         return copy;
+        //     }
+        // }
 
         public Purple_4(string input, (string, char)[] codes) : base(input) { 
             _output = null;

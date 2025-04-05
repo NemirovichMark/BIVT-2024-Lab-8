@@ -54,13 +54,8 @@ namespace Lab_8
                 int cntSpaces = cntWords - 1;
 
                 int lengthSpaces = 50 - lengths[i];
-                
-                if (cntSpaces == 0)
-                {
-                    strings[i][0] += new string(' ', lengthSpaces);
-                        
-                    continue;
-                }
+
+                if (cntSpaces == 0) continue;
                 
                 int minSpaceLength = lengthSpaces / cntSpaces;
                 int cntOneMoreSpace = lengthSpaces - minSpaceLength * cntSpaces;

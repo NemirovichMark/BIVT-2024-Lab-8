@@ -28,6 +28,7 @@ namespace Lab_8 {
 
             const int maxLength = 50;
 
+            // askdsadkjfdskflsdkflkdsfkldsklfsdlkflsdkflkdslkfsdkl
             // будем оценивать как худший случай => максимальное кол-во строк равно количеству слов
             // при 1000 символах - ~200 английских или ~170 русских слов
             string[] words = Input.Split(' ');

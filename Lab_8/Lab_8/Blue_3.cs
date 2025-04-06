@@ -55,13 +55,21 @@ namespace Lab_8
             if (String.IsNullOrEmpty(str) || prev < 0) return -1;
 
             int index = prev+1;
-            while (index < str.Length && (Char.IsLetter(str[index]) || str[index] == '\'') || str[index] == '-') // предыдущее слово
-                index++;
-            while (index < str.Length && !Char.IsLetter(str[index])) // пространство между словами
-                index++;
+            while (index < str.Length)
+            {
+                if ((Char.IsLetter(str[index]) || str[index] == '\'') || str[index] == '-') // предыдущее слово
+                    index++;
+                else break;
+            }
+            while (index < str.Length)
+            {
+                if (!Char.IsLetter(str[index])) // пространство между словами
+                    index++;
+                else break;
+            }
             if (index == str.Length) return -1; // предыдущее слово - последнее в строке
             // index - начало искомого слова
-            return index;
+             return index;
         }
         
         private void CountAllLetters()
@@ -126,12 +134,36 @@ namespace Lab_8
             CountLetterSort();
             FindAllFrequency();
         }
+        private string FreqFormat(double freq)
+        {
+            string res = "";
+            res += $"{Math.Round(freq, 4)}";
+            if(freq == 100)
+            {
+                res += ",0000";
+            }
+            else if (freq < 10) 
+            {
+                if (res.Length == 1)
+                    res += ",";
+                while(res.Length < 6)
+                    res += "0";
+            }
+            else
+            {
+                if (res.Length == 2)
+                    res += ",";
+                while (res.Length < 7)
+                    res += "0";
+            }
+            return res;
+        }
         public override string ToString()
         {
             // [letter][-][freq][\n] * _output.Length
             string str = "";
             foreach( (char letter, double freq) in _output)
-                str += $"{letter} - {Math.Round(freq, 4)}\n";
+                str += $"{letter} - {FreqFormat(freq)}\n";
             if(String.IsNullOrEmpty(str)) return str;
             str = str.Remove(str.Length - 1, 1);
             return str;

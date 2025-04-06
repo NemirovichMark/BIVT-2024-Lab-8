@@ -1,0 +1,15 @@
+/Users/vadim/Desktop/c# labs/BIVT-2024-Lab-8/lab8/bin/Debug/net8.0/lab8
+/Users/vadim/Desktop/c# labs/BIVT-2024-Lab-8/lab8/bin/Debug/net8.0/lab8.deps.json
+/Users/vadim/Desktop/c# labs/BIVT-2024-Lab-8/lab8/bin/Debug/net8.0/lab8.runtimeconfig.json
+/Users/vadim/Desktop/c# labs/BIVT-2024-Lab-8/lab8/bin/Debug/net8.0/lab8.dll
+/Users/vadim/Desktop/c# labs/BIVT-2024-Lab-8/lab8/bin/Debug/net8.0/lab8.pdb
+/Users/vadim/Desktop/c# labs/BIVT-2024-Lab-8/lab8/obj/Debug/net8.0/lab8.GeneratedMSBuildEditorConfig.editorconfig
+/Users/vadim/Desktop/c# labs/BIVT-2024-Lab-8/lab8/obj/Debug/net8.0/lab8.AssemblyInfoInputs.cache
+/Users/vadim/Desktop/c# labs/BIVT-2024-Lab-8/lab8/obj/Debug/net8.0/lab8.AssemblyInfo.cs
+/Users/vadim/Desktop/c# labs/BIVT-2024-Lab-8/lab8/obj/Debug/net8.0/lab8.csproj.CoreCompileInputs.cache
+/Users/vadim/Desktop/c# labs/BIVT-2024-Lab-8/lab8/obj/Debug/net8.0/lab8.sourcelink.json
+/Users/vadim/Desktop/c# labs/BIVT-2024-Lab-8/lab8/obj/Debug/net8.0/lab8.dll
+/Users/vadim/Desktop/c# labs/BIVT-2024-Lab-8/lab8/obj/Debug/net8.0/refint/lab8.dll
+/Users/vadim/Desktop/c# labs/BIVT-2024-Lab-8/lab8/obj/Debug/net8.0/lab8.pdb
+/Users/vadim/Desktop/c# labs/BIVT-2024-Lab-8/lab8/obj/Debug/net8.0/lab8.genruntimeconfig.cache
+/Users/vadim/Desktop/c# labs/BIVT-2024-Lab-8/lab8/obj/Debug/net8.0/ref/lab8.dll

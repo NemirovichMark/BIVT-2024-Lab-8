@@ -7,7 +7,8 @@ namespace Lab_8{
         private (string, char)[] _codes;
 
         public string Output => _output;
-        public (string, char)[] Codes => _codes;
+
+        //public (string, char)[] Codes => _codes;
         // public (string, char)[] Codes{
         //     get{
         //         if (_codes == null){
@@ -26,8 +27,11 @@ namespace Lab_8{
         }
 
         public override void Review()
-        {
+        {   
             string input = Input; //Изначальная строка
+            if (input == null){
+                return;
+            }
             //char[] chars = Input.ToCharArray();
             for (int i = 0; i < _codes.Length; i++){
                 string ans = "";

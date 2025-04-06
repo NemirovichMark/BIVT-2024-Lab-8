@@ -11,13 +11,21 @@ namespace Lab_8
         
         public Green_3(string input, string sequence) : base(input)
         {
-            _output = Array.Empty<string>();
+            _output = null;
             _sequence = sequence?.ToLower() ?? string.Empty; // Нормализуем искомую последовательность
         }
 
         public override void Review()
         {
+            // Если sequence пустая или null, устанавливаем _output в null
             if (string.IsNullOrEmpty(_sequence))
+            {
+                _output = null;
+                return;
+            }
+
+            // Если входная строка пустая, устанавливаем пустой массив
+            if (string.IsNullOrEmpty(Input))
             {
                 _output = Array.Empty<string>();
                 return;
@@ -47,7 +55,7 @@ namespace Lab_8
                     bool isDuplicate = false;
                     for (int j = 0; j < resultCount; j++)
                     {
-                        if (tempResults[j].ToLower() == lowerWord)
+                        if (string.Equals(tempResults[j], currentWord, StringComparison.OrdinalIgnoreCase))
                         {
                             isDuplicate = true;
                             break;

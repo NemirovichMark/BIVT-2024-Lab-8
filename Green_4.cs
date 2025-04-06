@@ -9,14 +9,27 @@ namespace Lab_8
 
         public Green_4(string input) : base(input) 
         {
-            _output = Array.Empty<string>();
+            _output = null;
         }
 
         public override void Review()
         {
+            // Если входная строка пустая или null, устанавливаем _output в null
+            if (string.IsNullOrEmpty(Input))
+            {
+                _output = null;
+                return;
+            }
             // Разделяем строку на фамилии
             string[] surnames = Input.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries); // 2 параметр удаляет пустые строчки
 
+            // Если нет фамилий, возвращаем пустой массив
+            if (surnames.Length == 0)
+            {
+                _output = Array.Empty<string>();
+                return;
+            }
+            
             // Очищаем от лишних пробелов
             for (int i = 0; i < surnames.Length; i++)
             {

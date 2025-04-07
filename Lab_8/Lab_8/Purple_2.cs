@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,7 +24,7 @@ namespace Lab_8
         {
             if (_output == null) return null;
 
-            return String.Join("\r\n", _output);
+            return String.Join("\n", _output);
         }
         private static string Formating(string a)
         {

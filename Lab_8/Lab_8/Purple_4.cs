@@ -11,7 +11,7 @@ namespace Lab_8
     {
         public Purple_4(string input, (string, char)[] codes) : base(input)
         {
-            if (codes != null);
+            if (codes != null)
             {
                 var newArray = new (string, char)[codes.Length];
                 Array.Copy(codes, newArray, codes.Length);

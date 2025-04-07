@@ -1,4 +1,4 @@
-﻿
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,23 +13,13 @@ namespace Lab_8
         {
             if (codes != null);
             {
-                var newArray = new (string, char)[_codes.Length];
-                Array.Copy(_codes, newArray, _codes.Length);
+                var newArray = new (string, char)[codes.Length];
+                Array.Copy(codes, newArray, codes.Length);
                 _codes = newArray;
             }
         }
         private string _output;
         private (string, char)[] _codes;
-        public (string, char)[] Codes
-        {
-            get
-            {
-                if (_codes == null) return null;
-                var newArray = new (string, char)[_codes.Length];
-                Array.Copy(_codes, newArray, _codes.Length);
-                return newArray;
-            }
-        }
         public string Output => _output;
         public override string ToString()
         {

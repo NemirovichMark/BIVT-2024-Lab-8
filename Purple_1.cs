@@ -27,8 +27,21 @@ namespace Lab_8
                     ls += s[i];
                     i++;
                 }
-                //Console.Write(0 + " ");
-                //Console.WriteLine(ls);
+
+                int flag = 0;
+                for (int j = 0; j < ls.Length; j++)
+                {
+                    if (char.IsDigit(ls[j]))
+                    {
+                        flag = 1;
+                    }
+                }
+                if (flag == 1)
+                {
+                    continue;
+                }
+
+
                 string ns = null;
                 for (int j = ls.Length - 1; j >= 0; j--)
                 {
@@ -36,12 +49,6 @@ namespace Lab_8
                 }
                 string end = null;
                 if (i < s.Length) end = s.Substring(i);
-                //Console.Write(1 + " ");
-                //Console.WriteLine(s.Substring(0, l));
-                //Console.Write(2 + " ");
-                //Console.WriteLine(ns);
-                //Console.Write(3 + " ");
-                //Console.WriteLine(end);
                 string news = s.Substring(0, l) + ns + end;
                 s = news;
                 i++;

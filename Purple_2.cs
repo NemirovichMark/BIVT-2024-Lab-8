@@ -100,7 +100,7 @@ namespace Lab_8
                 }
                 else
                 {
-                    ans = ans0[0] + (new string(' ', max - count));
+                    ans = ans0[0];
                 }
                 if (ans != null && ans != "")
                 {

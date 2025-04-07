@@ -8,14 +8,13 @@ namespace Lab_8
 {
     public class Purple_4 : Purple
     {
-        private string _ans = null;
         private string s = null;
         private (string, char)[] _codes = null;
         public string Output
         {
             get
             {
-                return _ans;
+                return s;
             }
         }
         public (string, char)[] Codes
@@ -57,13 +56,11 @@ namespace Lab_8
                         s = ss;
                     }
                 }
-            }
-            _ans = s;
-            
+            }            
         }
         public override string ToString()
         {
-            return _ans;
+            return s;
         }
     }
 }

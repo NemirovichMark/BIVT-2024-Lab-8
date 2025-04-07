@@ -78,6 +78,7 @@ namespace Lab_8
         }
         public override string ToString()
         {
+            if (String.IsNullOrEmpty(Output)) return null;
             return Output;
         }
     }

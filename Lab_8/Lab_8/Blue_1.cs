@@ -57,7 +57,7 @@ namespace Lab_8
             string str = "";
             for(int k = 0; k < _output.Length; k++)
                 str += $"{_output[k]}\n";
-            if(String.IsNullOrEmpty(str)) return str;
+            if(String.IsNullOrEmpty(str)) return null;
             str = str.Remove(str.Length - 1, 1);
             return str;
         }

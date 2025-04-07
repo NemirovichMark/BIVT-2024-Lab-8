@@ -164,7 +164,7 @@ namespace Lab_8
             string str = "";
             foreach( (char letter, double freq) in _output)
                 str += $"{letter} - {FreqFormat(freq)}\n";
-            if(String.IsNullOrEmpty(str)) return str;
+            if(String.IsNullOrEmpty(str)) return null;
             str = str.Remove(str.Length - 1, 1);
             return str;
         }

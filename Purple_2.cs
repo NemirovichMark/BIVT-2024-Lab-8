@@ -10,14 +10,19 @@ namespace Lab_8
 {
     public class Purple_2 : Purple
     {
-        private string[] _ans = new string[0];
+        private string[] _ans = null;
         private string s = null;
         private int max = 50;
         public string[] Output
         { get 
             {
-                if (_ans == new string[0]) return null;
-                return _ans; 
+                if (_ans == null) return null;
+                string[] s = new string[0];
+                for (int i = 0; i < _ans.Length; i++)
+                {
+                    s = s.Append(_ans[i]).ToArray();
+                }
+                return s;
             } 
         }
         public Purple_2(string str) : base(str)

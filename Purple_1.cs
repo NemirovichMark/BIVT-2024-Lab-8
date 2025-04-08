@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,7 +9,7 @@ namespace Lab_8
 {
     public class Purple_1 : Purple
     {
-
+        private char[] not_letters;
         public string Output { get; private set; }
         public Purple_1(string input) : base(input) { Output = default(string); } 
 
@@ -19,37 +20,32 @@ namespace Lab_8
                 Output = string.Empty;
                 return;
             };
+            var not_letters = new char[]{' ','.', '!', '?', ',', ':', '\"', ';', '–', '(', ')', '[', ']', '{', '}', '/' };
+            string[] massive_of_text = Input.Split(not_letters);
 
-            var words = Input.Split(' ');
-            var massive_of_words = new string[words.Length];
+            StringBuilder reversing_text = new StringBuilder(); int k = -1;
 
-            for (int i = 0; i < words.Length; i++)
-            {
-                massive_of_words[i] = Reversing(words[i]);
-            }
-            Output = string.Join(" ", massive_of_words);
-
-        }
-        private string Reversing(string word) {
-            if (string.IsNullOrEmpty(word)) return word;
-
-            int start = 0; int ending = word.Length - 1;
-            char[] chars_of_word = word.ToCharArray();
-
-            while (start < ending) {
-                if (char.IsPunctuation(chars_of_word[start])) {
-                    start++;
-                    continue;
+            foreach (string word in massive_of_text) { 
+                if (Proverka_na_word(word)) {
+                    var reversing_word = word.Reverse();
+                    reversing_text.Append(reversing_word.ToArray());
                 }
-                if (char.IsPunctuation(chars_of_word[ending])) {
-                    ending--;
-                    continue;
+                else
+                {
+                    reversing_text.Append(word);
                 }
-                (chars_of_word[start], chars_of_word[ending]) = (chars_of_word[ending],chars_of_word[start]);
-                start++; ending--;
+                k += word.Length + 1;
+                if (k < Input.Length)
+                {
+                    reversing_text.Append(Input[k]);
+                }
+                Output = reversing_text.ToString();
             }
-            return new string(chars_of_word);
-        }
+
+    }
+  
+
+        
         public override string ToString()
         {
             return Output;

@@ -22,21 +22,19 @@ namespace Lab_8
 
         public override void Review()
         {
-            if (string.IsNullOrEmpty(base.Input)) return;
+            if (Input == null) return;
+            
             Output = Input;
             Array.Resize(ref _codes, 5); int chetchik_5 = 0;
 
-            string[] pairs_of_2l = new string[0];
+            string[] pairs_of_2l = new string[Input.Length-1];
 
             for (int i = 0; i < Input.Length - 1; i++) {
-                if (not_letter.Contains(Input[i]) == false && not_letter.Contains(Input[i + 1]) == false)
-                {
-                    var xz = $"{Input[i]}{Input[i+1]}";
-                    pairs_of_2l = pairs_of_2l.Append(xz).ToArray();
-                }
+                    var pair = $"{Input[i]}{Input[i+1]}";
+                    pairs_of_2l[i] = pair;
             }
 
-            pairs_of_2l = pairs_of_2l.GroupBy(x => x).OrderByDescending(x => x.Count()).Select(x => x.Key.ToString()).Take(5).ToArray();
+            pairs_of_2l = pairs_of_2l.Where(x => x.All(letter => Char.IsLetter(letter))).GroupBy(x => x).OrderByDescending(x => x.Count()).Take(5).Select(x => x.Key).ToArray();
 
             for (int char1 = 32; char1 <= 126 && chetchik_5 < 5; char1++)
             {
@@ -51,8 +49,7 @@ namespace Lab_8
             {
                 Output = Output.Replace(Codes[i].Item1, Codes[i].Item2.ToString());
             }
-
-
+           
         }
         public override string ToString() {
             return Output;

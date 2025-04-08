@@ -63,7 +63,7 @@ namespace Lab_8
                 return line + new string(' ', Math.Max(0, length - line.Length));
 
             int all_spaces_need = length - line.Length + (words.Length - 1); // + пробелы между словами
-            int between_space = all_spaces_need / (words.Length - 1);
+            int between_space = all_spaces_need / (words.Length - 1) - 1;
             int extra_space = all_spaces_need % (words.Length - 1);
 
             StringBuilder done_line = new StringBuilder(words[0]);

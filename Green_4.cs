@@ -20,8 +20,9 @@ namespace Lab_8
                 _output = null;
                 return;
             }
-            // Разделяем строку на фамилии
-            string[] surnames = Input.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries); // 2 параметр удаляет пустые строчки
+
+            // Разделяем строку на фамилии и удаляем пустые элементы
+            string[] surnames = Input.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
 
             // Если нет фамилий, возвращаем пустой массив
             if (surnames.Length == 0)
@@ -29,29 +30,59 @@ namespace Lab_8
                 _output = Array.Empty<string>();
                 return;
             }
-            
+
             // Очищаем от лишних пробелов
             for (int i = 0; i < surnames.Length; i++)
             {
                 surnames[i] = surnames[i].Trim();
             }
 
-            // Сортировка пузырьком
-            for (int i = 0; i < surnames.Length - 1; i++)
+            // Удаляем дубликаты (без учета регистра)
+            int uniqueCount = 0;
+            string[] uniqueSurnames = new string[surnames.Length];
+
+            for (int i = 0; i < surnames.Length; i++)
             {
-                for (int j = 0; j < surnames.Length - 1 - i; j++)
+                bool isDuplicate = false;
+                string current = surnames[i];
+                
+                // Проверяем, есть ли уже такая фамилия (без учета регистра)
+                for (int j = 0; j < uniqueCount; j++)
                 {
-                    if (CompareStrings(surnames[j].ToLower(), surnames[j + 1].ToLower()))
+                    if (string.Equals(current, uniqueSurnames[j], StringComparison.OrdinalIgnoreCase))
+                    {
+                        isDuplicate = true;
+                        break;
+                    }
+                }
+
+                if (!isDuplicate)
+                {
+                    uniqueSurnames[uniqueCount] = current;
+                    uniqueCount++;
+                }
+            }
+
+            // Создаем массив нужного размера
+            string[] result = new string[uniqueCount];
+            Array.Copy(uniqueSurnames, result, uniqueCount);
+
+            // Сортировка пузырьком
+            for (int i = 0; i < result.Length - 1; i++)
+            {
+                for (int j = 0; j < result.Length - 1 - i; j++)
+                {
+                    if (CompareStrings(result[j].ToLower(), result[j + 1].ToLower()))
                     {
                         // Меняем местами
-                        string temp = surnames[j];
-                        surnames[j] = surnames[j + 1];
-                        surnames[j + 1] = temp;
+                        string temp = result[j];
+                        result[j] = result[j + 1];
+                        result[j + 1] = temp;
                     }
                 }
             }
 
-            _output = surnames;
+            _output = result;
         }
 
         // Собственный метод сравнения строк

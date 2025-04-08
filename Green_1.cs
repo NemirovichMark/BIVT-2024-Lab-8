@@ -14,13 +14,13 @@ namespace Lab_8
         {
             _output = null;
         }
-        char[] letters = new char[32];
+        char[] letters = new char[33];
 
-        char[] russianLetters = new char[] { 'а', 'б', 'в', 'г', 'д', 'е', 'ж', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я' };
+        char[] russianLetters = new char[] { 'а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я' };
         public override void Review()
         {
             // Массив для подсчета количества каждой русской буквы
-            int[] russianLetterCounts = new int[32];
+            int[] russianLetterCounts = new int[33];
             int totalAllLetters = 0; // Счетчик всех букв (включая не русские)
             
             // Подсчет букв в тексте
@@ -46,7 +46,7 @@ namespace Lab_8
                 }
             }
             // Создание массива результатов
-            var result = new (char, double)[32];
+            var result = new (char, double)[33];
             for (int i = 0; i < russianLetters.Length; i++)
             {
                 // Используем totalAllLetters в знаменателе, как требуется
@@ -63,9 +63,12 @@ namespace Lab_8
             string result = "";
             for (int i = 0; i < _output.Length; i++)
             {
-                result += $"{_output[i].Item1} - {_output[i].Item2:F4}";
-                if (i < _output.Length - 1)
-                    result += "\n";
+                if(_output[i].Item2>0.0)
+                {
+                    result += $"{_output[i].Item1} - {_output[i].Item2:F4}";
+                    if (i < _output.Length - 1)
+                        result += "\n";
+                }
             }
             
             return result;

@@ -12,7 +12,8 @@ namespace Lab_8
         public Green_3(string input, string sequence) : base(input)
         {
             _output = null;
-            _sequence = sequence?.ToLower() ?? string.Empty; // Нормализуем искомую последовательность
+            // Приводим искомую последовательность к нижнему регистру при создании
+            _sequence = sequence?.ToLower() ?? string.Empty;
         }
 
         public override void Review()
@@ -31,22 +32,24 @@ namespace Lab_8
                 return;
             }
 
+            // Массив разделителей для разбиения текста на слова
             char[] delimiters = { 
                 ' ', '.', '!', '?', ',', ':', '\"', ';',
                 '–', '(', ')', '[', ']', '{', '}', '/' 
             };
 
-            string[] words = Input.Split(delimiters, StringSplitOptions.RemoveEmptyEntries); // 2 параметр удаляет пустые строчки
+            // Разбиваем входную строку на слова, удаляя пустые элементы
+            string[] words = Input.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
             
             // Временный массив для хранения результатов (максимально возможный размер)
             string[] tempResults = new string[words.Length];
             int resultCount = 0;
 
-            // Проверяем каждое слово
+            // Проверяем каждое слово в тексте
             for (int i = 0; i < words.Length; i++)
             {
-                string currentWord = words[i].ToLower();
-                string lowerWord = currentWord.ToLower();
+                // Приводим текущее слово к нижнему регистру для сравнения
+                string lowerWord = words[i].ToLower();
                 
                 // Проверяем содержит ли слово искомую последовательность
                 if (lowerWord.Contains(_sequence))
@@ -55,17 +58,18 @@ namespace Lab_8
                     bool isDuplicate = false;
                     for (int j = 0; j < resultCount; j++)
                     {
-                        if (string.Equals(tempResults[j], currentWord, StringComparison.OrdinalIgnoreCase))
+                        // Сравниваем слова в нижнем регистре для корректного поиска дубликатов
+                        if (tempResults[j].ToLower() == lowerWord)
                         {
                             isDuplicate = true;
                             break;
                         }
                     }
                     
-                    // Если не дубликат, добавляем в результаты
+                    // Если не дубликат, добавляем в результаты (в нижнем регистре)
                     if (!isDuplicate)
                     {
-                        tempResults[resultCount] = currentWord;
+                        tempResults[resultCount] = lowerWord;
                         resultCount++;
                     }
                 }
@@ -73,12 +77,18 @@ namespace Lab_8
 
             // Создаем итоговый массив нужного размера
             _output = new string[resultCount];
+            // Копируем результаты из временного массива
             Array.Copy(tempResults, _output, resultCount);
         }
 
         public override string ToString()
         {
-            return _output == null || _output.Length == 0 ? string.Empty : string.Join(Environment.NewLine, _output);
+            // Если результатов нет, возвращаем пустую строку
+            if (_output == null || _output.Length == 0)
+                return string.Empty;
+            
+            // Объединяем результаты через перевод строки
+            return string.Join(Environment.NewLine, _output);
         }
     }
 }

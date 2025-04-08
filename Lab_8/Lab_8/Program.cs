@@ -30,18 +30,33 @@ namespace Lab_8
             //blue2.Review();
             //Console.WriteLine(blue2.ToString());
             //Console.WriteLine();
-            //Blue_2 blue_2 = new Blue_2("ddfddf" , null);
+            //Blue_2 blue_2 = new Blue_2("ddfddf", null);
             //blue_2.Review();
             //Console.WriteLine(blue_2.ToString());
 
             // 3
-            //Blue_3 blue3 = new Blue_3("Определить долю (в процентах) слов, начинающихся на различные буквы." +
-            //    " Выписать эти буквы и доли начинающихся на них слов." +
-            //    " Свойство Output должно возвращать массив кортежей (символ в нижнем регистре, вещественное число)," +
-            //    " отсортированный по убыванию доли слов. При равенстве долей сортировать по буквы по алфавиту." +
-            //    " Метод ToString() должен возвращать построчно пары символа и вещественного числа, разделенных “-”.");
-            //blue3.Review();
-            //Console.WriteLine(blue3.ToString());
+            string str1 = "";
+            for(int i = 0; i < 21; i++)
+                str1+= "A ";
+            for (int i = 0; i < 12; i++)
+                str1 += "t w ";
+            for (int i = 0; i < 9; i++)
+                str1 += "o ";
+            for (int i = 0; i < 6; i++)
+                str1 += "i ";
+            for (int i = 0; i < 5; i++)
+                str1 += "d e p ";
+            for (int i = 0; i < 4; i++)
+                str1 += "b h m r s ";
+            for (int i = 0; i < 3; i++)
+                str1 += "c j l ";
+            for (int i = 0; i < 2; i++)
+                str1 += "f g ";
+            str1 += "n y";
+
+            Blue_3 blue3 = new Blue_3(str1);
+            blue3.Review();
+            Console.WriteLine(blue3.ToString());
             //Blue_3 blue_3 = new Blue_3(null);
             //blue_3.Review();
             //Console.WriteLine(blue_3.ToString());
@@ -51,9 +66,9 @@ namespace Lab_8
             //    " Найти сумму включенных в текст чисел.");
             //blue4.Review();
             //Console.WriteLine(blue4.ToString());
-            Blue_4 blue_4 = new Blue_4("");
-            blue_4.Review();
-            Console.WriteLine(blue_4.ToString());
+            //Blue_4 blue_4 = new Blue_4("");
+            //blue_4.Review();
+            //Console.WriteLine(blue_4.ToString());
 
         }
     }

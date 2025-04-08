@@ -16,7 +16,7 @@ namespace Lab_8
         {
 
         }
-        public override string ToString()
+        public string ToString()
         {
             var s = Input;
             string[] words = new string[0];
@@ -25,7 +25,14 @@ namespace Lab_8
             {
                 if (IsSeparator(letter) || letter == ' ')
                 {
-                    if (word.Length != 0) Append(ref words, new string(word.Reverse().ToArray()));
+                    if (word.Length != 0)
+                    {
+                        int bebra = 0;
+                        if (HasDigit(word))
+                        {
+                            Append(ref words, word);
+                        } else Append(ref words, new string(word.Reverse().ToArray()));
+                    }
                     Append(ref words, letter.ToString());
                     word = "";
                 }

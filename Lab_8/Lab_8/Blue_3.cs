@@ -27,7 +27,7 @@ namespace Lab_8
     
         public Blue_3(string input) : base(input)
         {
-            _output = new (char, double)[0];
+            _output = null;  //new (char, double)[0];
             _countLetter = new (char, int)[0];
             _num = 0;
         }
@@ -161,10 +161,10 @@ namespace Lab_8
         public override string ToString()
         {
             // [letter][-][freq][\n] * _output.Length
+            if (_output == null || _output.Length == 0) return null;
             string str = "";
             foreach( (char letter, double freq) in _output)
                 str += $"{letter} - {FreqFormat(freq)}\n";
-            if(String.IsNullOrEmpty(str)) return null;
             str = str.Remove(str.Length - 1, 1);
             return str;
         }

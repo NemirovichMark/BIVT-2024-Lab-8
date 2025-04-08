@@ -15,7 +15,7 @@ namespace Lab_8
         public Blue_2(string input, string sequence) : base(input)
         { 
             _sequence = sequence;
-            _output = input;
+            _output = null;
         }
 
         private (int, int) FindWord(string str, int from)
@@ -57,6 +57,8 @@ namespace Lab_8
         }
         public override void Review()
         {
+            _output = Input;
+
             while (true)
             {
                 (int start, int end) = FindWordWithSeq(_output, _sequence);

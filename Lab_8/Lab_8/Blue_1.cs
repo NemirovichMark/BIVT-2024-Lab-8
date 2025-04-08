@@ -12,12 +12,15 @@ namespace Lab_8
         public string[] Output => _output;
         public Blue_1(string input) : base(input)
         {
-            _output = new string[0];
+            _output = null;
         }
 
         private void AddToOutput(string str)
         {
-            Array.Resize(ref _output, _output.Length + 1);
+            if(_output == null) _output = new string[1];
+            else 
+                Array.Resize(ref _output, _output.Length + 1);
+
             _output[_output.Length - 1] = str;
         }
         private string SplitOne(string str)
@@ -54,10 +57,10 @@ namespace Lab_8
         }
         public override string ToString()
         {
+            if (_output == null) return null;
             string str = "";
             for(int k = 0; k < _output.Length; k++)
                 str += $"{_output[k]}\n";
-            if(String.IsNullOrEmpty(str)) return null;
             str = str.Remove(str.Length - 1, 1);
             return str;
         }

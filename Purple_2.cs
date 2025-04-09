@@ -32,6 +32,7 @@ namespace Lab_8
         public override void Review()
         {
             if (s == null) return;
+            _ans = new string[0];
             var p = s.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
             string[] ans0 = new string[0];
             int count = 0;

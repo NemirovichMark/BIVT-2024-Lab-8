@@ -27,6 +27,7 @@ namespace Lab_8
         public override void Review()
         {
             if (String.IsNullOrEmpty(_to_delete) || String.IsNullOrEmpty(this.Input)) return;
+            if (_to_delete.Any(char.IsDigit)) { _output = this.Input; return; };
             string[] splitted_text = this.Input.Split(' ');
             foreach (string word in splitted_text) {
 

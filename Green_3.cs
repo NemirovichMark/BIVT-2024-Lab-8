@@ -38,8 +38,33 @@ namespace Lab_8
                 '–', '(', ')', '[', ']', '{', '}', '/' 
             };
 
-            // Разбиваем входную строку на слова, удаляя пустые элементы
-            string[] words = Input.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
+            // Разбиваем строку на слова
+            string[] tempWords = Input.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
+
+            // Считаем сколько будет непустых слов после очистки
+            int validWordCount = 0;
+            foreach (string word in tempWords)
+            {
+                if (!string.IsNullOrWhiteSpace(word))
+                {
+                    validWordCount++;
+                }
+            }
+
+            // Создаем массив нужного размера
+            string[] words = new string[validWordCount];
+            int index = 0;
+
+            // Заполняем массив очищенными словами
+            foreach (string word in tempWords)
+            {
+                if (!string.IsNullOrWhiteSpace(word))
+                {
+                    words[index] = word.Trim();
+                    index++;
+                }
+            }
+            
             
             // Временный массив для хранения результатов (максимально возможный размер)
             string[] tempResults = new string[words.Length];

@@ -22,7 +22,31 @@ namespace Lab_8
             }
 
             // Разделяем строку на фамилии и удаляем пустые элементы
-            string[] surnames = Input.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+            string[] tempWords = Input.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+
+            // Считаем сколько будет непустых слов после очистки
+            int validWordCount = 0;
+            foreach (string word in tempWords)
+            {
+                if (!string.IsNullOrWhiteSpace(word))
+                {
+                    validWordCount++;
+                }
+            }
+
+            // Создаем массив нужного размера
+            string[] surnames = new string[validWordCount];
+            int index = 0;
+
+            // Заполняем массив очищенными словами
+            foreach (string word in tempWords)
+            {
+                if (!string.IsNullOrWhiteSpace(word))
+                {
+                    surnames[index] = word.Trim();
+                    index++;
+                }
+            }
 
             // Если нет фамилий, возвращаем пустой массив
             if (surnames.Length == 0)

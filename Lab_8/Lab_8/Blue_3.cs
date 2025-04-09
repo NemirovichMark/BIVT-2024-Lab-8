@@ -68,6 +68,8 @@ namespace Lab_8
                 else break;
             }
             if (index == str.Length) return -1; // предыдущее слово - последнее в строке
+            if (Char.IsDigit(str[index - 1]))
+                index = NextWord(str, index);
             // index - начало искомого слова
              return index;
         }

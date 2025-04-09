@@ -60,14 +60,6 @@ namespace Lab_8
             char c;
             foreach (string word in splitted_text) {
                 c = word.ToLower()[0];
-                //if (char.IsLetter(c) || c == '(' && char.IsLettesr(word.ToLower()[1]))
-                //{
-                //    if (char.IsLetter(c)) Count(c);
-                //    else Count(word.ToLower()[1]);
-                //}
-                //else {
-                //    word_count--;
-                //}
                 if (char.IsLetter(c)) Count(c);
                 else if ((c == '(' && char.IsLetter(word.ToLower()[1])) || (c == '"' && char.IsLetter(word.ToLower()[1]))) Count(word.ToLower()[1]);
                 else word_count--;
@@ -81,6 +73,7 @@ namespace Lab_8
             foreach ((char, double) t in _output) {
                 result += $"{t.Item1} - {t.Item2:F4}\n";
             }
+            result = result.Remove(result.Length - 1);
             return result;
         }
     }

@@ -43,17 +43,18 @@ namespace Lab_8
 
         public override void Review()
         {
-            if (String.IsNullOrEmpty(this.Input)) { return; }
+            // if (String.IsNullOrEmpty(this.Input)) { return; }
             MySplit(this.Input);
         }
 
         public string ToString() {
-            if (_output == null) { return null; }
+            if (String.IsNullOrEmpty(this.Input) || _output == null) { return null; }
             string result = "";
             foreach (string s in _output) {
                 if (String.IsNullOrEmpty(s)) break;
                 result += s + '\n';
             }
+            result = result.Remove(result.Length - 1);
             return result;
         }
     }

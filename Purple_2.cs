@@ -9,27 +9,27 @@ namespace Lab_8
 {
     internal class Purple_2 : Purple
     {
-        private string _output = null;
+        private string[] _output = null;
         private int _len = 50;
-        public string Output
+        public string[] Output
         {
             get
             {
-                string[] s = ToString();
-                string res = "";
+                /*string res = "";
                 foreach (string w in s)
                 {
                     //Console.WriteLine(w);
                     res += (w + "\r\n");
                 }
-                //res =  res.Substring(0, res.Length - 4);
-                return res;
+                //res =  res.Substring(0, res.Length - 4);*/
+                return _output;
             }
         }
         public Purple_2(string input) : base(input) { }
         public override void Review()
         {
-
+            string[] s = ToString();
+            _output = s;
         }
         public string[] ToString()
         {
@@ -72,6 +72,16 @@ namespace Lab_8
             int len = 0;
             foreach (string word in s) len += word.Length;
             int need = _len - len;
+            if (cnt == 1)
+            {
+                var r = new StringBuilder();
+                foreach (var word in s)
+                {
+                    r.Append(word);
+                    r.Append(new string(' ', need));
+                }
+                return r.ToString();
+            }
             //foreach (string word in s) Console.WriteLine(word);
             int basic = need / (cnt - 1), extra = need % (cnt - 1);
             //Console.WriteLine($"{len},  {_len}, {cnt},  {need}, {basic}, {extra}");

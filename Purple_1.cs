@@ -14,7 +14,7 @@ namespace Lab_8
         public Purple_1(string input) : base(input) { }
         public override void Review()
         {
-
+            _output = ToString();
         }
         public string ToString()
         {

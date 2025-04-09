@@ -9,40 +9,60 @@ namespace Lab_8
     internal class Purple_4 : Purple
     {
         private string _output = null;
+        private (string, char)[] _codes = new (string, char)[5];
+        private int _index = 0;
         public string Output => _output;
-        public Purple_4(string input) : base(input) { }
+        public (string, char)[] Codes
+        {
+            get
+            {
+                if (_codes == null) return null;
+                return ((string, char)[])_codes.Clone();
+            }
+        }
+
+        public Purple_4(string input, (string, char)[] codes) : base(input)
+        {
+            (string, char)[] _codes = codes;
+        }
         public override void Review()
         {
-
+            _output = ToString();
         }
         public override string ToString()
         {
-            var s = Input;
-            string[] words = new string[0];
-            string word = "";
-            foreach (var letter in s)
+            string uncompressed = Input;
+            foreach (var c in _codes)
             {
-                if (IsSeparator(letter))
-                {
-                    if (word.Length != 0) Append(ref words, new string(word.Reverse().ToArray()));
-                    Append(ref words, letter.ToString());
-                    word = "";
-                }
-                else
-                {
-                    word += letter;
-                }
+                //Console.WriteLine($"{c.Item1}   {c.Item2}");
+                uncompressed = uncompressed.Replace(c.Item2.ToString(), c.Item1);
             }
 
-            if (word.Length != 0) Append(ref words, new string(word.Reverse().ToArray()));
-
-            string res = "";
-            foreach (var w in words)
+            return uncompressed;
+        }
+        private string Compress()
+        {
+            string compressed = Input;
+            foreach (var c in _codes)
             {
-                res += w;
+                //Console.WriteLine($"{c.Item1}   {c.Item2}");
+                compressed = compressed.Replace(c.Item1, c.Item2.ToString());
             }
 
-            return res;
+            return compressed;
+        }
+        private string[] CntPair(string s)
+        {
+            var topPairs = Enumerable.Range(0, s.Length - 1)
+                .Select(i => s.Substring(i, 2))
+                .Where(let => char.IsLetter(let[0]) && char.IsLetter(let[1]))
+                .GroupBy(p => p)
+                .OrderByDescending(g => g.Count())
+                .ThenBy(ind => s.IndexOf(ind.Key))
+                .Select(g => g.Key)
+                .Take(5)
+                .ToArray();
+            return topPairs;
         }
         private void Append(ref string[] words, string word)
         {

@@ -17,7 +17,8 @@ namespace Lab_8
             _output = new string[0];
         }
 
-        private void AddToOutput(string s) { 
+        private void AddToOutput(string s) {
+            if (_output == null) return;
             Array.Resize(ref _output, _output.Length + 1);
             _output[_output.Length - 1] = s;
         }

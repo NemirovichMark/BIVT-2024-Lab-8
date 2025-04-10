@@ -26,6 +26,7 @@ namespace Lab_8
         }
 
         private void Count(char c) {
+            if (_counts == null) return;
             if (_counts.Length == 0) {
                 Array.Resize(ref _counts, 1);
                 _counts[0] = (c, 1);
@@ -45,6 +46,7 @@ namespace Lab_8
         }
 
         private void CalcFreq((char, int)[] counts, int word_count) {
+            if (_output == null) return;
             if (word_count == 0) { return; }
             Array.Resize(ref _output, counts.Length);
             for (int i = 0; i < counts.Length; i++) { 
@@ -69,6 +71,7 @@ namespace Lab_8
         }
 
         public string ToString() {
+            if (_output == null) return null;
             string result = "";
             foreach ((char, double) t in _output) {
                 result += $"{t.Item1} - {t.Item2:F4}\n";

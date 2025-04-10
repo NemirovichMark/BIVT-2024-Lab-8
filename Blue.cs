@@ -16,7 +16,7 @@ namespace Lab_8
             _input = input;
         }
 
-        public virtual void Review() { }
+        public abstract void Review();
 
     }
 }

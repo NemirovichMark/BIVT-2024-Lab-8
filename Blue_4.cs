@@ -13,7 +13,7 @@ namespace Lab_8
         public Blue_4(string input) : base(input)
         {
         }
-        public string ToString()
+        public override string ToString()
         {
             return output.ToString();
         }

@@ -63,7 +63,7 @@ namespace Lab_8
 
         }
 
-        public string ToString()
+        public override string ToString()
         {
             string result = "";
             for(int i = 0; i < output.Length; i++)

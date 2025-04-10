@@ -53,7 +53,7 @@ namespace Lab_8
             
         }
 
-        public string ToString()
+        public override string ToString()
         {
             return output;
         }

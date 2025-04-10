@@ -12,10 +12,8 @@ namespace Lab_8
         public (char, double)[] Output => _output;
         public Green_1(string input) : base(input) 
         {
-            _output = Array.Empty<(char, double)>();
+            _output = null;
         }
-        char[] letters = new char[33];
-
         char[] russianLetters = new char[] { 'а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я' };
         public override void Review()
         {
@@ -45,13 +43,25 @@ namespace Lab_8
                     }
                 }
             }
-            // Создание массива результатов
-            var result = new (char, double)[33];
+            int lengthResult=0;
             for (int i = 0; i < russianLetters.Length; i++)
             {
-                // Используем totalAllLetters в знаменателе, как требуется
-                double frequency = totalAllLetters > 0 ? (double)russianLetterCounts[i] / totalAllLetters : 0.0;
-                result[i] = (russianLetters[i], frequency);
+                if (russianLetterCounts[i]>0)
+                {
+                    lengthResult++;
+                }
+            }
+            // Создание массива результатов
+            var result = new (char, double)[lengthResult];
+            int resultIndex = 0;
+            for (int i = 0; i < russianLetters.Length; i++)
+            {
+                if (russianLetterCounts[i]>0)
+                {
+                    // Используем totalAllLetters в знаменателе, как требуется
+                    double frequency = totalAllLetters > 0 ? (double)russianLetterCounts[i] / totalAllLetters : -1.0;
+                    result[resultIndex++] = (russianLetters[i], frequency);
+                }
             }
             _output = result;
         }

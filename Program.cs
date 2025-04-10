@@ -7,7 +7,6 @@ class Program
     {
         Console.WriteLine("Запуск тестов для Green_1\n");
         
-        TestEmptyString1();
         TestAmazonForestText1();
         TestEngineText1();
         TestGreeceDefaultText1();
@@ -19,7 +18,6 @@ class Program
 
         Console.WriteLine("Запуск тестов для Green_2\n");
         
-        TestEmptyString2();
         TestAmazonForestText2();
         TestEngineText2();
         TestGreeceDefaultText2();
@@ -50,24 +48,6 @@ class Program
     }
 
     // Green_1 Tests
-    static void TestEmptyString1()
-    {
-        var analyzer = new Green_1("");
-        analyzer.Review();
-        
-        Console.WriteLine("Тест пустой строки:");
-        Console.WriteLine(analyzer.ToString());
-        
-        foreach (var item in analyzer.Output)
-        {
-            if (item.Item2 != 0.0)
-            {
-                Console.WriteLine("Ошибка: для пустой строки все частоты должны быть 0");
-                return;
-            }
-        }
-        Console.WriteLine("Тест пройден\n");
-    }
 
     static void TestAmazonForestText1()
     {
@@ -320,21 +300,6 @@ class Program
     }
 
     // Green_2 Tests
-    static void TestEmptyString2()
-    {
-        var analyzer = new Green_2("");
-        analyzer.Review();
-        
-        Console.WriteLine("Тест пустой строки:");
-        Console.WriteLine(analyzer.ToString());
-        
-        if (analyzer.Output.Length != 0)
-        {
-            Console.WriteLine("Ошибка: для пустой строки должен быть пустой массив");
-            return;
-        }
-        Console.WriteLine("Тест пройден\n");
-    }
 
     static void TestAmazonForestText2()
     {

@@ -9,11 +9,17 @@ namespace Lab_8
 
         public Green_2(string input) : base(input) 
         {
-            _output = Array.Empty<char>();
+            _output = null;
         }
 
         public override void Review()
         {
+            // Если входная строка пустая или null, устанавливаем _output в null
+            if (string.IsNullOrEmpty(Input))
+            {
+                _output = null;
+                return;
+            }
             // Разделители слов
             char[] delimiters = { 
                 ' ', '.', '!', '?', ',', ':', '\"', ';', 
@@ -22,6 +28,13 @@ namespace Lab_8
 
             // Разбиваем текст на слова
             string[] words = Input.Split(delimiters, StringSplitOptions.RemoveEmptyEntries); // 2 параметр удаляет пустые строчки
+
+            // Если после разделения нет слов, возвращаем пустой массив
+            if (words.Length == 0)
+            {
+                _output = Array.Empty<char>();
+                return;
+            }
             
             // Массивы для хранения букв и их частот
             char[] letters = new char[words.Length];

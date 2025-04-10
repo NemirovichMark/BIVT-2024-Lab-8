@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -55,7 +55,7 @@ namespace Lab_8
             if (Output == null || Output.Length == 0) return "";
             StringBuilder res = new StringBuilder(Output[0]);
             foreach (string s in Output.Skip(1)) {
-                res.Append("\n" + s);
+                res.Append(Environment.NewLine + s);
             }
             return res.ToString();
         }

@@ -10,11 +10,6 @@ namespace Lab_8
     public class Blue_4 : Blue 
     {
         private int _output;
-        private static char[] _punctuation_marks;
-
-        static Blue_4() { 
-            _punctuation_marks = new char[] { '.', '!', '?', ',', ':', '\"', ';', '–', '(', ')', '[', ']', '{', '}', '/', ' ' };
-        }
 
         public Blue_4(string input) : base(input) { 
             _output = 0;

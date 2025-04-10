@@ -10,12 +10,6 @@ namespace Lab_8
     {
         private string _to_delete;
         private string _output;
-        private static char[] _punctuation_marks;
-
-        static Blue_2()
-        {
-            _punctuation_marks = new char[] { '.', '!', '?', ',', ':', '\"', ';', '–', '(', ')', '[', ']', '{', '}', '/', ' ' };
-        }
 
         public string Output => _output;
 

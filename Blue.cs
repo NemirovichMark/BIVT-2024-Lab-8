@@ -9,6 +9,12 @@ namespace Lab_8
     public abstract class Blue
     {
         private string _input;
+        protected static char[] _punctuation_marks;
+
+        static Blue()
+        {
+            _punctuation_marks = new char[] { '.', '!', '?', ',', ':', '\"', ';', '–', '(', ')', '[', ']', '{', '}', '/', ' ' };
+        }
 
         public string Input => _input;
 

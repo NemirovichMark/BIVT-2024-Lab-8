@@ -58,14 +58,15 @@ namespace Lab_8
                 Console.WriteLine(word);
             }
             var totalWords = 0;
-            /*
+            
             foreach (var word in letterCounts)
             {
                 totalWords += word.Value;
-                Console.Write(word.Key);
-                Console.Write(" - ");
-                Console.WriteLine(word.Value);
+                //Console.Write(word.Key);
+                //Console.Write(" - ");
+                //Console.WriteLine(word.Value);
             }
+            /*
             Console.WriteLine(totalWords);
             foreach (var word in letterCounts)
             {

@@ -14,6 +14,7 @@ namespace Lab_8
         {
             get
             {
+                if(output == null) return null;
                 return output;
             }
         }
@@ -26,7 +27,7 @@ namespace Lab_8
 
         public override void Review()
         {
-
+            if (Input == null) return;
             int n = 0;
             string lastSave = "";
             string curSave = "";
@@ -34,7 +35,7 @@ namespace Lab_8
             
             for (int i = 0; i < Input.Length; i++)
             {
-                Console.WriteLine(Input[i]);
+                //Console.WriteLine(Input[i]);
                 if (Input[i] == ' ')
                 {
                     curSave += ' ';
@@ -59,12 +60,13 @@ namespace Lab_8
             }
             
             output = newRes;
-            ToString();
+            //ToString();
 
         }
 
         public override string ToString()
         {
+            if (output == null) return null ;
             string result = "";
             for(int i = 0; i < output.Length; i++)
             {
@@ -74,7 +76,7 @@ namespace Lab_8
                 }
                 else
                 {
-                    result += output[i] + '\n';
+                    result += output[i] + Environment.NewLine;
                 }
                 
 

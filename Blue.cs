@@ -13,7 +13,7 @@ namespace Lab_8
         public string Input => input;
 
         public string alphabet = "qwertyuiopasdfghjklzxcvbnmйцукенгшщзхъфывапролджэячсмитьбю";
-
+        public char[] zhnaki = { '.', '!', '?', ',', ':', '\"', ';', '–', '(', ')', '[', ']', '{', '}', '/'};
         public Blue(string input)
         {
             this.input = input;

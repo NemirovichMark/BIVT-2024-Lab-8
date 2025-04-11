@@ -10,7 +10,7 @@ namespace Lab_8
     {
         private string output;
 
-        private string Output => output;
+        public string Output => output;
         private string abc;
         public Blue_2(string input, string abc) : base(input)
         {
@@ -28,7 +28,11 @@ namespace Lab_8
                // Console.WriteLine(workto[i].ToLower().IndexOf(abc));
                 if (workto[i].ToLower().IndexOf(abc) != -1)
                 {
-                    Console.WriteLine(workto[i].IndexOf(abc));
+                    if (Array.IndexOf(zhnaki, workto[i][workto[i].Length - 1] ) != -1)
+                    {
+                        res[res.Length - 1] = res[res.Length - 1] + workto[i][workto[i].Length - 1];
+                    }
+                    //Console.WriteLine(workto[i].IndexOf(abc));
 
                 }
                 else

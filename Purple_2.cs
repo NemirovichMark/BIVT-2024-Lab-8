@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 
 namespace Lab_8
@@ -46,6 +46,11 @@ namespace Lab_8
         }
 
 
-        public override string ToString() => string.Join("\n", _output);
+        public override string ToString()
+        {
+            if (_output == null) return null;
+
+            return String.Join("\n", _output);
+        }
     }
 }

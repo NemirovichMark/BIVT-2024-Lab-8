@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 
 namespace Lab_8
@@ -13,26 +13,16 @@ namespace Lab_8
         {
             _codes = codes;
         }
-
         public override void Review()
         {
             if (_input == null || _codes == null) return;
-
             string result = _input;
-
             for (int i = 0; i < _codes.Length; i++)
             {
-                var (pair, code) = _codes[i];
-                int index = 0;
-                while ((index = result.IndexOf(code, index)) != -1)
-                {
-                    result = result.Remove(index, 1);
-                    result = result.Insert(index, pair);
-                    index += 2;
-                }
+                result = result.Replace(_codes[i].Item2.ToString(), _codes[i].Item1);
             }
-
             _output = result;
+
         }
 
         public override string ToString() => _output;

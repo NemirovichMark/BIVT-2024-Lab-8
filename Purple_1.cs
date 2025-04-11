@@ -11,41 +11,50 @@ namespace Lab_8
     {
         private char[] not_letters;
         public string Output { get; private set; }
-        public Purple_1(string input) : base(input) { Output = default(string); } 
+
+        public Purple_1(string input) : base(input) { Output = default(string); }
 
 
         public override void Review()
         {
-            if (string.IsNullOrEmpty(Input)){
+            if (string.IsNullOrEmpty(Input))
+            {
                 Output = string.Empty;
                 return;
-            };
-            var not_letters = new char[]{' ','.', '!', '?', ',', ':', '\"', ';', '–', '(', ')', '[', ']', '{', '}', '/' };
-            string[] massive_of_text = Input.Split(not_letters);
+            }
+            
 
-            StringBuilder reversing_text = new StringBuilder(); int k = -1;
+            not_letters = new char[] { '.', '!', '?', ',', ':', '\"', ';', '–', '(', ')', '[', ']', '{', '}', '/', ' ' };
 
-            foreach (string word in massive_of_text) { 
-                if (Proverka_na_word(word)) {
-                    var reversing_word = word.Reverse();
-                    reversing_text.Append(reversing_word.ToArray());
+            string[] words_of_text = Input.Split(not_letters);
+            int search_from = 0;
+
+            foreach (var word in words_of_text)
+            {
+                int starting = Input.IndexOf(word, search_from);
+
+                Output += Input.Substring(search_from, starting - search_from);
+
+                bool checking = word.Any(c => char.IsDigit(c));
+                if (checking)
+                {
+                    Output += word;
                 }
                 else
                 {
-                    reversing_text.Append(word);
+                    char[] reversed = word.ToArray();
+                    Array.Reverse(reversed);
+                    Output += new string(reversed);
                 }
-                k += word.Length + 1;
-                if (k < Input.Length)
-                {
-                    reversing_text.Append(Input[k]);
-                }
-                Output = reversing_text.ToString();
+
+                search_from = starting + word.Length;
             }
 
-    }
-  
+            Output += Input.Substring(search_from);  
+        }
 
         
+
         public override string ToString()
         {
             return Output;
